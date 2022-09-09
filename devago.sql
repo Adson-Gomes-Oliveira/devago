@@ -1,0 +1,29 @@
+DROP DATABASE IF EXISTS devago;
+CREATE DATABASE IF NOT EXISTS devago;
+USE devago;
+
+DROP TABLES IF EXISTS categories;
+DROP TABLES IF EXISTS projects;
+DROP TABLES IF EXISTS projectCategories;
+
+CREATE TABLE IF NOT EXISTS categories (
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS projects (
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    `description` VARCHAR(255) NOT NULL,
+    thumbnail VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS projectCategories (
+	project_id INT NOT NULL,
+    category_id INT NOT NULL,
+    FOREIGN KEY(project_id) REFERENCES projects(id),
+    FOREIGN KEY(category_id) REFERENCES categories(id),
+    PRIMARY KEY(project_id, category_id)
+);
