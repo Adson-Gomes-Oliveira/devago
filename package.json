@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./src/tests"
+    "test": "./src/tests",
+    "dev": "nodemon ./src/server.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",

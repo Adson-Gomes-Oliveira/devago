@@ -28,7 +28,6 @@ async function edit(payload: ICategory<number>): Promise<ICategory<number>> {
     UPDATE categories
     SET name = ?
     WHERE id = ?
-      (?);
   `, [payload.name, payload.id]);
 
   return payload;
