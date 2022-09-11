@@ -1,4 +1,5 @@
 import projectsModel from '../models/projects.model';
+import projectCategoriesModel from '../models/projectCategories.model';
 import HttpStatus from '../helpers/httpStatus';
 import IResult from '../interfaces/result.interface';
 import IProject from '../interfaces/project.interface';
