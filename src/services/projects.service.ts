@@ -1,5 +1,4 @@
 import projectsModel from '../models/projects.model';
-import categoriesModel from '../models/categories.model';
 import HttpStatus from '../helpers/httpStatus';
 import IResult from '../interfaces/result.interface';
 import IProject from '../interfaces/project.interface';
@@ -22,7 +21,7 @@ async function edit(payload: IProject<number>): Promise<IResult> {
   const validation = valid.create(payload);
   if (validation.message) return validation;
 
-  // Creation of a new register on projectCategories table
+  // Missing creation of a new register on projectCategories table
 
   const result: IProject<number> = await projectsModel.edit(payload);
   return { data: result, code: HttpStatus.CREATED };
