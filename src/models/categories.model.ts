@@ -1,4 +1,5 @@
 import { ResultSetHeader } from 'mysql2';
+
 import connection from '../helpers/connection';
 import ICategory from '../interfaces/category.interface';
 
