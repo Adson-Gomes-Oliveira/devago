@@ -46,4 +46,4 @@ export default {
   create,
   edit,
   exclude,
-};
+}

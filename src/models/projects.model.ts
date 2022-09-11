@@ -35,7 +35,7 @@ async function edit(payload: IProject<number>): Promise<IProject<number>> {
 };
 
 async function exclude(id: number): Promise<void> {
-  await connection.execute<ResultSetHeader>(`
+  await connection.execute(`
     DELETE FROM projects 
     WHERE id = ?
   `, [id]);
