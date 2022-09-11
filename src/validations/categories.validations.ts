@@ -7,7 +7,7 @@ const create = (payload: ICategory<number>) => {
     name: JOI.string().min(3).required(),
   }).validate(payload);
 
-  if (error) return { message: error.message, code: HttpStatus.BAD_REQUEST };
+  if (error) return { message: error.details[0].message, code: HttpStatus.BAD_REQUEST };
   return {};
 }
 
@@ -17,7 +17,7 @@ const edit = (payload: ICategory<number>) => {
     name: JOI.string().min(3).required(),
   }).validate(payload);
 
-  if (error) return { message: error.message, code: HttpStatus.BAD_REQUEST };
+  if (error) return { message: error.details[0].message, code: HttpStatus.BAD_REQUEST };
   return {};
 }
 

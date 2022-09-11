@@ -3,6 +3,7 @@ interface IProject<T> {
   title: string;
   description: string;
   thumbnail: string;
+  categoryIds?: number[];
 }
 
 export default IProject;
