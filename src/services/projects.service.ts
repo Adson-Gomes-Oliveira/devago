@@ -18,7 +18,7 @@ async function create(payload: IProject<number>): Promise<IResult> {
 }
 
 async function edit(payload: IProject<number>): Promise<IResult> {
-  const validation = valid.create(payload);
+  const validation = valid.edit(payload);
   if (validation.message) return validation;
 
   // Missing creation of a new register on projectCategories table
