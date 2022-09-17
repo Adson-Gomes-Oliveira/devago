@@ -5,7 +5,7 @@ import IResult from "../interfaces/result.interface";
 import ProjectService from "../services/projects.service";
 
 export default class ProjectController {
-  constructor(private service: ProjectService = new ProjectService()) {};
+  constructor(private service = new ProjectService()) {};
 
   async getAll(_req: Request, res: Response, next: NextFunction)
   : Promise<Response | undefined> {

@@ -5,7 +5,7 @@ import HttpStatus from "../helpers/httpStatus";
 import valid from "../validations/projects.validations";
 
 export default class ProjectService {
-  constructor(private database: ProjectModel = new ProjectModel()) {};
+  constructor(private database = new ProjectModel()) {};
 
   async getAll(): Promise<IResult> {
     const result: IProject<number>[] = await this.database.getAll();
