@@ -3,7 +3,7 @@ import connection from "../helpers/connection";
 
 import IProject from "../interfaces/project.interface";
 
-export default class projectModel {
+export default class ProjectModel {
   async getAll(): Promise<IProject<number>[]> {
     const [result] = await connection.execute<RowDataPacket[]>(`
       SELECT pr.*, ct.name AS category FROM projects AS pr
