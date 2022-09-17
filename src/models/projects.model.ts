@@ -6,11 +6,7 @@ import IProject from "../interfaces/project.interface";
 export default class ProjectModel {
   async getAll(): Promise<IProject<number>[]> {
     const [result] = await connection.execute<RowDataPacket[]>(`
-      SELECT pr.*, ct.name AS category FROM projects AS pr
-      INNER JOIN projectCategories AS prct
-      INNER JOIN categories AS ct
-      ON ct.id = prct.category_id
-      AND pr.id = prct.project_id;
+      SELECT *, FROM projects;
     `);
 
     return result as IProject<number>[];

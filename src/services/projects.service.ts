@@ -4,7 +4,7 @@ import IProject from "../interfaces/project.interface";
 import HttpStatus from "../helpers/httpStatus";
 import valid from "../validations/projects.validations";
 
-export default class projectService {
+export default class ProjectService {
   constructor(private database: ProjectModel = new ProjectModel()) {};
 
   async getAll(): Promise<IResult> {
