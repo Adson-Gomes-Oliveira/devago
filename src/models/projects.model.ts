@@ -1,55 +1,45 @@
-import { ResultSetHeader } from "mysql2";
-
+import { RowDataPacket, ResultSetHeader } from "mysql2";
 import connection from "../helpers/connection";
+
 import IProject from "../interfaces/project.interface";
 
-async function getAll(): Promise<IProject<number>[]> {
-  const [result] = await connection.execute(`
-    SELECT pr.*, ct.name AS category FROM projects AS pr
-    INNER JOIN projectCategories AS prct
-    INNER JOIN categories AS ct
-    ON ct.id = prct.category_id
-    AND pr.id = prct.project_id;
-  `);
-  return result as IProject<number>[];
-};
+export default class projectModel {
+  async getAll(): Promise<IProject<number>[]> {
+    const [result] = await connection.execute<RowDataPacket[]>(`
+      SELECT pr.*, ct.name AS category FROM projects AS pr
+      INNER JOIN projectCategories AS prct
+      INNER JOIN categories AS ct
+      ON ct.id = prct.category_id
+      AND pr.id = prct.project_id;
+    `);
 
-async function create(payload: IProject<number>): Promise<IProject<number>> {
-  const create = await connection.execute<ResultSetHeader>(`
-    INSERT INTO projects (title, description, thumbnail) VALUES
-      (?, ?, ?);
-  `, [payload.title, payload.description, payload.thumbnail]);
-
-  const [dataInserted] = create;
-
-  const newProject = {
-    id: dataInserted.insertId,
-    ...payload,
+    return result as IProject<number>[];
   };
 
-  return newProject;
-};
+  async create(payload: IProject<number>): Promise<IProject<number>> {
+    const [dataInserted] = await connection.execute<ResultSetHeader>(`
+      INSERT INTO projects (title, description, thumbnail) VALUES
+        (?, ?, ?);
+    `, [payload.title, payload.description, payload.thumbnail]);
 
-async function edit(payload: IProject<number>): Promise<IProject<number>> {
-  await connection.execute<ResultSetHeader>(`
-    UPDATE projects
-    SET title = ?, description = ?, thumbnail = ?
-    WHERE id = ?
-  `, [payload.title, payload.description, payload.thumbnail, payload.id]);
+    payload.id = dataInserted.insertId;
+    return payload;
+  };
 
-  return payload;
-};
-
-async function exclude(id: number): Promise<void> {
-  await connection.execute(`
-    DELETE FROM projects 
-    WHERE id = ?
-  `, [id]);
-};
-
-export default {
-  getAll,
-  create,
-  edit,
-  exclude,
+  async editAll(payload: IProject<number>): Promise<IProject<number>> {
+    await connection.execute<ResultSetHeader>(`
+      UPDATE projects
+      SET title = ?, description = ?, thumbnail = ?
+      WHERE id = ?
+    `, [payload.title, payload.description, payload.thumbnail, payload.id]);
+  
+    return payload;
+  };
+  
+  async exclude(id: number): Promise<void> {
+    await connection.execute(`
+      DELETE FROM projects 
+      WHERE id = ?
+    `, [id]);
+  };
 }
