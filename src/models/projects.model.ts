@@ -4,7 +4,13 @@ import connection from "../helpers/connection";
 import IProject from "../interfaces/project.interface";
 
 async function getAll(): Promise<IProject<number>[]> {
-  const [result] = await connection.execute(`SELECT * FROM projects`);
+  const [result] = await connection.execute(`
+    SELECT pr.*, ct.name AS category FROM projects AS pr
+    INNER JOIN projectCategories AS prct
+    INNER JOIN categories AS ct
+    ON ct.id = prct.category_id
+    AND pr.id = prct.project_id;
+  `);
   return result as IProject<number>[];
 };
 
