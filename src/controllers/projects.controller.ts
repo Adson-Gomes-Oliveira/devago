@@ -15,6 +15,8 @@ export default class ProjectController {
 
       return res.status(result.code).json(result.data);
     } catch (error) {
+      console.error(error);
+      
       next(error)
     }
   }
