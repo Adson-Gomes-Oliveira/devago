@@ -5,7 +5,8 @@ class ProjectModel extends Model {
   id!: number;
   title!: string;
   description!: string;
-  link!: string;
+  linkToRepo!: string;
+  linkToProd!: string;
   thumbnail!: string;
   status!: boolean;
 }
@@ -19,7 +20,8 @@ ProjectModel.init({
   },
   title: STRING,
   description: TEXT,
-  link: STRING,
+  linkToRepo: STRING,
+  linkToProd: STRING,
   thumbnail: STRING,
   status: BOOLEAN,
 }, {

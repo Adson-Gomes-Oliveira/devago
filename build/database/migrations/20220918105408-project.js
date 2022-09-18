@@ -16,7 +16,11 @@ module.exports = {
       description: {
         type: Sequelize.TEXT,
       },
-      link: {
+      linkToRepo: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      linkToProd: {
         type: Sequelize.STRING,
         allowNull: false,
       },
