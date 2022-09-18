@@ -7,12 +7,12 @@ import valid from "../validations/projects.validations";
 export default class ProjectService {
   constructor(private database = new ProjectModel()) {};
 
-  async getAll(): Promise<IResult> {
+  public async getAll(): Promise<IResult> {
     const result: IProject<number>[] = await this.database.getAll();
     return { data: result, code: HttpStatus.OK };
   };
 
-  async create(payload: IProject<number>): Promise<IResult> {
+  public async create(payload: IProject<number>): Promise<IResult> {
     const validation = valid.create(payload);
     if (validation.message) return validation;
   
@@ -20,7 +20,7 @@ export default class ProjectService {
     return { data: result, code: HttpStatus.CREATED };
   }
 
-  async editAll(payload: IProject<number>): Promise<IResult> {
+  public async editAll(payload: IProject<number>): Promise<IResult> {
     const validation = valid.edit(payload);
     if (validation.message) return validation;
   
@@ -28,7 +28,7 @@ export default class ProjectService {
     return { data: result, code: HttpStatus.CREATED };
   }
 
-  async exclude(id: number): Promise<IResult> {
+  public async exclude(id: number): Promise<IResult> {
     await this.database.exclude(id);
     return { code: HttpStatus.DELETED };
   }

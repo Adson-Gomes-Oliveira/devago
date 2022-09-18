@@ -7,7 +7,7 @@ import ProjectService from "../services/projects.service";
 export default class ProjectController {
   constructor(private service = new ProjectService()) {};
 
-  async getAll(_req: Request, res: Response, next: NextFunction)
+  public async getAll(_req: Request, res: Response, next: NextFunction)
   : Promise<Response | undefined> {
     try {
       const result: IResult = await this.service.getAll();
@@ -21,7 +21,7 @@ export default class ProjectController {
     }
   }
 
-  async create(req: Request, res: Response, next: NextFunction)
+  public async create(req: Request, res: Response, next: NextFunction)
   : Promise<Response | undefined> {
     try {
       const payload: IProject<number> = req.body;
@@ -35,7 +35,7 @@ export default class ProjectController {
     }
   }
 
-  async editAll(req: Request, res: Response, next: NextFunction)
+  public async editAll(req: Request, res: Response, next: NextFunction)
   : Promise<Response | undefined> {
     try {
       const payload: IProject<number> = req.body;
@@ -51,7 +51,7 @@ export default class ProjectController {
     }
   }
 
-  async exclude(req: Request, res: Response, next: NextFunction)
+  public async exclude(req: Request, res: Response, next: NextFunction)
   :Promise<Response | undefined> {
     try {
       const { id } = req.params;
