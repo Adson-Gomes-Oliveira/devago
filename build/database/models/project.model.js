@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
-const _1 = __importDefault(require("."));
+const index_1 = __importDefault(require("./index"));
 class ProjectModel extends sequelize_1.Model {
 }
 ProjectModel.init({
@@ -21,7 +21,7 @@ ProjectModel.init({
     thumbnail: sequelize_1.STRING,
     status: sequelize_1.BOOLEAN,
 }, {
-    sequelize: _1.default,
+    sequelize: index_1.default,
     tableName: 'project',
     modelName: 'ProjectModel',
 });

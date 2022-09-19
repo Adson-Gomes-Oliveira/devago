@@ -1,5 +1,5 @@
 import { BOOLEAN, INTEGER, Model, STRING, TEXT } from 'sequelize';
-import db from '.';
+import db from './index';
 
 class ProjectModel extends Model {
   id!: number;
