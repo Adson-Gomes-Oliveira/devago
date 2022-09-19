@@ -28,54 +28,11 @@ class ProjectController {
                 return res.status(result.code).json(result.data);
             }
             catch (error) {
-                console.error(error);
                 next(error);
             }
         });
     }
-    create(req, res, next) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const payload = req.body;
-                const result = yield this.service.create(payload);
-                if (result.message)
-                    throw new CustomError_1.default(result);
-                return res.status(result.code).json(result.data);
-            }
-            catch (error) {
-                next(error);
-            }
-        });
-    }
-    editAll(req, res, next) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const payload = req.body;
-                const { id } = req.params;
-                payload.id = Number(id);
-                const result = yield this.service.create(payload);
-                if (result.message)
-                    throw new CustomError_1.default(result);
-                return res.status(result.code).json(result.data);
-            }
-            catch (error) {
-                next(error);
-            }
-        });
-    }
-    exclude(req, res, next) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const { id } = req.params;
-                const result = yield this.service.exclude(Number(id));
-                if (result.message)
-                    throw new CustomError_1.default(result);
-                return res.status(result.code).json(result.data);
-            }
-            catch (error) {
-                next(error);
-            }
-        });
-    }
+    ;
 }
 exports.default = ProjectController;
+;

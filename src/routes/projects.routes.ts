@@ -5,8 +5,8 @@ const router = express.Router();
 const controller = new ProjectController(); 
 
 router.get('/', controller.getAll);
-router.post('/', controller.create);
-router.put('/:id', controller.editAll);
-router.delete('/:id', controller.exclude);
+// router.post('/', controller.create);
+// router.put('/:id', controller.editAll);
+// router.delete('/:id', controller.exclude);
 
 export default router;

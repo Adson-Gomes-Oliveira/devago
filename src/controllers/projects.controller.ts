@@ -15,53 +15,7 @@ export default class ProjectController {
 
       return res.status(result.code).json(result.data);
     } catch (error) {
-      console.error(error);
-      
-      next(error)
-    }
-  }
-
-  public async create(req: Request, res: Response, next: NextFunction)
-  : Promise<Response | undefined> {
-    try {
-      const payload: IProject<number> = req.body;
-
-      const result: IResult = await this.service.create(payload);
-      if (result.message) throw new CustomError(result);
-
-      return res.status(result.code).json(result.data);
-    } catch (error) {
-      next(error)
-    }
-  }
-
-  public async editAll(req: Request, res: Response, next: NextFunction)
-  : Promise<Response | undefined> {
-    try {
-      const payload: IProject<number> = req.body;
-      const { id } = req.params;
-      payload.id = Number(id);
-
-      const result: IResult = await this.service.create(payload);
-      if (result.message) throw new CustomError(result);
-
-      return res.status(result.code).json(result.data);
-    } catch (error) {
-      next(error)
-    }
-  }
-
-  public async exclude(req: Request, res: Response, next: NextFunction)
-  :Promise<Response | undefined> {
-    try {
-      const { id } = req.params;
-
-      const result: IResult = await this.service.exclude(Number(id));
-      if (result.message) throw new CustomError(result);
-  
-      return res.status(result.code).json(result.data);
-    } catch (error) {
       next(error);
     }
-  }
-}
+  };
+};
