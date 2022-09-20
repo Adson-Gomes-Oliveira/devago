@@ -6,6 +6,8 @@ const create = (payload: IProject<number>) => {
   const { error } = JOI.object({
     title: JOI.string().min(3).required(),
     description: JOI.string().min(3).required(),
+    linkToRepo: JOI.string().min(3).required(),
+    linkToProd: JOI.string().min(3).required(),
     thumbnail: JOI.string().min(3).required(),
     categoryIds: JOI.array().items(JOI.number().min(1)),
   }).validate(payload);
@@ -19,6 +21,8 @@ const edit = (payload: IProject<number>) => {
     id: JOI.number().min(1).required(),
     title: JOI.string().min(3).required(),
     description: JOI.string().min(3).required(),
+    linkToRepo: JOI.string().min(3).required(),
+    linkToProd: JOI.string().min(3).required(),
     thumbnail: JOI.string().min(3).required(),
     categoryIds: JOI.array().items(JOI.number().min(1)),
   }).validate(payload);

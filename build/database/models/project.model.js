@@ -24,5 +24,6 @@ ProjectModel.init({
     sequelize: index_1.default,
     tableName: 'project',
     modelName: 'ProjectModel',
+    underscored: true,
 });
 exports.default = ProjectModel;

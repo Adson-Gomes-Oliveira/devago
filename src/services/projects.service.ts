@@ -1,17 +1,14 @@
-import { Sequelize } from 'sequelize';
-
+import Sequelize from '../database/models/index'
 import ProjectModel from "../database/models/project.model";
 import IResult from "../interfaces/result.interface";
 import IProject from "../interfaces/project.interface";
 import HttpStatus from "../helpers/httpStatus";
 import valid from "../validations/projects.validations";
 
-const config = require('../../build/database/config/database');
-
 export default class ProjectService {
   constructor(
     private database = ProjectModel,
-    private sequelize = new Sequelize(config.development),
+    private sequelize = Sequelize,
   ) {};
 
   private async transactionCreate(payload: IProject<number>) {

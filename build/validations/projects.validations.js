@@ -9,6 +9,8 @@ const create = (payload) => {
     const { error } = joi_1.default.object({
         title: joi_1.default.string().min(3).required(),
         description: joi_1.default.string().min(3).required(),
+        linkToRepo: joi_1.default.string().min(3).required(),
+        linkToProd: joi_1.default.string().min(3).required(),
         thumbnail: joi_1.default.string().min(3).required(),
         categoryIds: joi_1.default.array().items(joi_1.default.number().min(1)),
     }).validate(payload);
@@ -21,6 +23,8 @@ const edit = (payload) => {
         id: joi_1.default.number().min(1).required(),
         title: joi_1.default.string().min(3).required(),
         description: joi_1.default.string().min(3).required(),
+        linkToRepo: joi_1.default.string().min(3).required(),
+        linkToProd: joi_1.default.string().min(3).required(),
         thumbnail: joi_1.default.string().min(3).required(),
         categoryIds: joi_1.default.array().items(joi_1.default.number().min(1)),
     }).validate(payload);

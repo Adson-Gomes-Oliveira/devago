@@ -8,7 +8,7 @@ const projects_controller_1 = __importDefault(require("../controllers/projects.c
 const router = express_1.default.Router();
 const controller = new projects_controller_1.default();
 router.get('/', controller.getAll);
-// router.post('/', controller.create);
-// router.put('/:id', controller.editAll);
-// router.delete('/:id', controller.exclude);
+router.post('/', controller.create);
+router.put('/:id', controller.editAll);
+router.delete('/:id', controller.exclude);
 exports.default = router;

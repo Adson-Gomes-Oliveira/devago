@@ -12,13 +12,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const sequelize_1 = require("sequelize");
+const index_1 = __importDefault(require("../database/models/index"));
 const project_model_1 = __importDefault(require("../database/models/project.model"));
 const httpStatus_1 = __importDefault(require("../helpers/httpStatus"));
 const projects_validations_1 = __importDefault(require("../validations/projects.validations"));
 const config = require('../../build/database/config/database');
 class ProjectService {
-    constructor(database = project_model_1.default, sequelize = new sequelize_1.Sequelize(config.development)) {
+    constructor(database = project_model_1.default, sequelize = index_1.default) {
         this.database = database;
         this.sequelize = sequelize;
     }

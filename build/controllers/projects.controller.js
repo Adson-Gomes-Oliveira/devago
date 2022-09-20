@@ -17,12 +17,61 @@ const projects_service_1 = __importDefault(require("../services/projects.service
 class ProjectController {
     constructor(service = new projects_service_1.default()) {
         this.service = service;
+        this.getAll = this.getAll.bind(this);
+        this.create = this.create.bind(this);
+        this.editAll = this.editAll.bind(this);
+        this.exclude = this.exclude.bind(this);
     }
     ;
     getAll(_req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const result = yield this.service.getAll();
+                if (result.message)
+                    throw new CustomError_1.default(result);
+                return res.status(result.code).json(result.data);
+            }
+            catch (error) {
+                next(error);
+            }
+        });
+    }
+    ;
+    create(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const payload = req.body;
+                const result = yield this.service.create(payload);
+                if (result.message)
+                    throw new CustomError_1.default(result);
+                return res.status(result.code).json(result.data);
+            }
+            catch (error) {
+                next(error);
+            }
+        });
+    }
+    ;
+    editAll(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const payload = req.body;
+                payload.id = Number(req.params.id);
+                const result = yield this.service.editAll(payload);
+                if (result.message)
+                    throw new CustomError_1.default(result);
+                return res.status(result.code).json(result.data);
+            }
+            catch (error) {
+                next(error);
+            }
+        });
+    }
+    ;
+    exclude(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const result = yield this.service.exclude(Number(req.params.id));
                 if (result.message)
                     throw new CustomError_1.default(result);
                 return res.status(result.code).json(result.data);

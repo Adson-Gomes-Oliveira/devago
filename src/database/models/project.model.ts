@@ -28,6 +28,7 @@ ProjectModel.init({
   sequelize: db,
   tableName: 'project',
   modelName: 'ProjectModel',
+  underscored: true,
 });
 
 export default ProjectModel;
