@@ -9,7 +9,7 @@ export default class ProjectService {
   constructor(
     private database = ProjectModel,
     private sequelize = Sequelize,
-  ) {};
+  ) {}
 
   private async transactionCreate(payload: IProject<number>) {
     const { title, description, linkToRepo,
@@ -30,7 +30,7 @@ export default class ProjectService {
       const err = error as unknown as Error;
       return { message: err.message, code: HttpStatus.INTERNAL };
     }
-  };
+  }
   private async transactionEdit(payload: IProject<number>) {
     const { id, title, description, linkToRepo,
     linkToProd, thumbnail, status } = payload;
@@ -50,30 +50,30 @@ export default class ProjectService {
       const err = error as unknown as Error;
       return { message: err.message, code: HttpStatus.INTERNAL };
     }
-  };
+  }
 
   public async getAll(): Promise<IResult> {
     const result: IProject<number>[] = await this.database.findAll();
     return { data: result, code: HttpStatus.OK };
-  };
+  }
   public async create(payload: IProject<number>): Promise<IResult> {
     const validation = valid.create(payload);
     if (validation.message) return validation;
   
     const create: IResult = await this.transactionCreate(payload);
     return create;
-  };
+  }
   public async editAll(payload: IProject<number>): Promise<IResult> {
     const validation = valid.edit(payload);
     if (validation.message) return validation;
   
     const create: IResult = await this.transactionEdit(payload);
     return create;
-  };
+  }
   public async exclude(id: number): Promise<IResult> {
     await this.database.destroy(
       { where: { id } }
     );
     return { code: HttpStatus.DELETED };
-  };
-};
+  }
+}

@@ -11,7 +11,7 @@ export default class ProjectController {
     this.create = this.create.bind(this);
     this.editAll = this.editAll.bind(this);
     this.exclude = this.exclude.bind(this);
-  };
+  }
 
   async getAll (_req: Request, res: Response, next: NextFunction)
   : Promise<Response | undefined> {
@@ -23,7 +23,7 @@ export default class ProjectController {
     } catch (error) {
       next(error);
     }
-  };
+  }
 
   async create (req: Request, res: Response, next: NextFunction)
   : Promise<Response | undefined> {
@@ -36,7 +36,7 @@ export default class ProjectController {
     } catch (error) {
       next(error);
     }
-  };
+  }
 
   async editAll (req: Request, res: Response, next: NextFunction)
   : Promise<Response | undefined> {
@@ -51,7 +51,7 @@ export default class ProjectController {
     } catch (error) {
       next(error);
     }
-  };
+  }
 
   async exclude (req: Request, res: Response, next: NextFunction)
   : Promise<Response | undefined> {
@@ -63,5 +63,5 @@ export default class ProjectController {
     } catch (error) {
       next(error);
     }
-  };
-};
+  }
+}

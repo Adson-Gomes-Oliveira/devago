@@ -4,7 +4,7 @@ import db from './index';
 class CategoryModel extends Model {
   id!: string;
   name!: string;
-};
+}
 
 CategoryModel.init({
   id: {
