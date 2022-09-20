@@ -16,7 +16,6 @@ const index_1 = __importDefault(require("../database/models/index"));
 const project_model_1 = __importDefault(require("../database/models/project.model"));
 const httpStatus_1 = __importDefault(require("../helpers/httpStatus"));
 const projects_validations_1 = __importDefault(require("../validations/projects.validations"));
-const config = require('../../build/database/config/database');
 class ProjectService {
     constructor(database = project_model_1.default, sequelize = index_1.default) {
         this.database = database;

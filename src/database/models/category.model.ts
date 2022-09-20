@@ -1,4 +1,4 @@
-import { Model, INTEGER, STRING, Sequelize } from 'sequelize';
+import { Model, INTEGER, STRING } from 'sequelize';
 import db from './index';
 
 class CategoryModel extends Model {
