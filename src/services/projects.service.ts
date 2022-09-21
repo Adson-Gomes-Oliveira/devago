@@ -1,11 +1,13 @@
 import Sequelize from '../database/models/index'
 import ProjectModel from "../database/models/project.model";
+import CategoryModel from '../database/models/category.model';
 import HttpStatus from "../helpers/httpStatus";
 import valid from "../validations/projects.validations";
 
 import IResult from "../interfaces/result.interface";
 import IProject from "../interfaces/project.interface";
 import IService from '../interfaces/service.interface';
+import ProjectCategoryModel from '../database/models/projectCategory.model';
 
 class ProjectTransaction {
   constructor(
@@ -56,7 +58,11 @@ class ProjectTransaction {
 class ProjectService extends ProjectTransaction
 implements IService {
   public async getAll(): Promise<IResult> {
-    const result: IProject<number>[] = await this.model.findAll();
+    const result: IProject<number>[] = await this.model.findAll({
+      include: [
+        { model: CategoryModel, as: 'category', through: { attributes: [] } },
+      ]
+    });
     return { data: result, code: HttpStatus.OK };
   }
 

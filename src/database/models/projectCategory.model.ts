@@ -27,13 +27,15 @@ ProjectCategoryModel.init({
 CategoryModel.belongsToMany(ProjectModel, {
   as: 'project',
   through: ProjectCategoryModel,
-  foreignKey: 'projectId',
-  otherKey: 'categoryId',
+  foreignKey: 'project_id',
+  otherKey: 'category_id',
 });
 
 ProjectModel.belongsToMany(CategoryModel, {
   as: 'category',
   through: ProjectCategoryModel,
-  foreignKey: 'categoryId',
-  otherKey: 'projectId',
+  foreignKey: 'category_id',
+  otherKey: 'project_id',
 });
+
+export default ProjectCategoryModel;
