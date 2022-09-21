@@ -1,10 +1,9 @@
-import IError from "../interfaces/error.interface";
 import IResult from "../interfaces/result.interface";
 
 class CustomError extends Error {
   code: number;
 
-  constructor(data: IError | IResult) {
+  constructor(data: IResult) {
     super(data.message);
     this.code = data.code;
   }

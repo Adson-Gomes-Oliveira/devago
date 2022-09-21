@@ -1,79 +1,96 @@
 import Sequelize from '../database/models/index'
 import ProjectModel from "../database/models/project.model";
-import IResult from "../interfaces/result.interface";
-import IProject from "../interfaces/project.interface";
 import HttpStatus from "../helpers/httpStatus";
 import valid from "../validations/projects.validations";
 
-export default class ProjectService {
+import IResult from "../interfaces/result.interface";
+import IProject from "../interfaces/project.interface";
+import IService from '../interfaces/service.interface';
+
+class ProjectTransaction {
   constructor(
-    private database = ProjectModel,
-    private sequelize = Sequelize,
+    protected model = ProjectModel,
+    protected sequelize = Sequelize,
   ) {}
 
-  private async transactionCreate(payload: IProject<number>) {
-    const { title, description, linkToRepo,
-    linkToProd, thumbnail, status } = payload;
-
+  protected async transactCreate(payload: IProject<number>)
+  : Promise<IResult> {
     try {
-      const transaction = await this.sequelize.transaction(async (t) => {
-        const result = await this.database.create(
-          { title, description, linkToRepo,
-          linkToProd, thumbnail, status },
-          { transaction: t },
+      const transactOP = await this.sequelize.transaction(async (t) => {
+        const result = await this.model.create(
+          {...payload},
+          {transaction: t},
         );
+
         return { data: result, code: HttpStatus.CREATED };
       });
 
-      return transaction;
+      return transactOP;
     } catch (error) {
       const err = error as unknown as Error;
       return { message: err.message, code: HttpStatus.INTERNAL };
     }
   }
-  private async transactionEdit(payload: IProject<number>) {
-    const { id, title, description, linkToRepo,
-    linkToProd, thumbnail, status } = payload;
 
+  protected async transactEdit(payload: IProject<number>)
+  : Promise<IResult> {
     try {
-      const transaction = this.sequelize.transaction(async (t) => {
-        await this.database.update(
-          { title, description, linkToRepo,
-          linkToProd, thumbnail, status },
+      const transactOP = await this.sequelize.transaction(async (t) => {
+        const id = payload.id;
+        await this.model.update(
+          { ...payload },
           { where: { id }, transaction: t },
         );
+
         return { data: payload, code: HttpStatus.CREATED };
       });
 
-      return transaction;
+      return transactOP;
     } catch (error) {
       const err = error as unknown as Error;
       return { message: err.message, code: HttpStatus.INTERNAL };
     }
   }
+}
 
+class ProjectService extends ProjectTransaction
+implements IService {
   public async getAll(): Promise<IResult> {
-    const result: IProject<number>[] = await this.database.findAll();
+    const result: IProject<number>[] = await this.model.findAll();
     return { data: result, code: HttpStatus.OK };
   }
+
+  public async getByID(id: number): Promise<IResult> {
+    const result: IProject<number> | null = await this.model.findByPk(id);
+    if (result === null) {
+      return { message: "ID doesn't exist", code: HttpStatus.BAD_REQUEST };
+    }
+
+    return { data: result, code: HttpStatus.OK };
+  }
+
   public async create(payload: IProject<number>): Promise<IResult> {
     const validation = valid.create(payload);
     if (validation.message) return validation;
   
-    const create: IResult = await this.transactionCreate(payload);
+    const create: IResult = await this.transactCreate(payload);
     return create;
   }
-  public async editAll(payload: IProject<number>): Promise<IResult> {
+
+  public async edit(payload: IProject<number>): Promise<IResult> {
     const validation = valid.edit(payload);
     if (validation.message) return validation;
   
-    const create: IResult = await this.transactionEdit(payload);
+    const create: IResult = await this.transactEdit(payload);
     return create;
   }
+
   public async exclude(id: number): Promise<IResult> {
-    await this.database.destroy(
+    await this.model.destroy(
       { where: { id } }
     );
     return { code: HttpStatus.DELETED };
   }
 }
+
+export default ProjectService;
