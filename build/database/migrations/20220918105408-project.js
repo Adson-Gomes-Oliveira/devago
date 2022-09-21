@@ -16,13 +16,16 @@ module.exports = {
       description: {
         type: Sequelize.TEXT,
       },
-      link_to_repo: {
+      linkToRepo: {
         type: Sequelize.STRING,
         allowNull: false,
+        field: 'link_to_repo',
+        
       },
-      link_to_prod: {
+      linkToProd: {
         type: Sequelize.STRING,
         allowNull: false,
+        field: 'link_to_prod',
       },
       thumbnail: {
         type: Sequelize.STRING,
@@ -31,14 +34,16 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         defaultValue: true,
       },
-      created_at: {
+      createdAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        field: 'created_at'
       },
-      updated_at: {
+      updatedAt: {
         type: Sequelize.DATE,
         onUpdate: 'CASCADE',
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        field: 'updated_at'
       }
     });
   },

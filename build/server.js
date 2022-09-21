@@ -7,5 +7,6 @@ require("dotenv/config");
 const app_1 = __importDefault(require("./app"));
 const port = process.env.SERVER_PORT || 3001;
 app_1.default.listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log(`Listening on port ${port}`);
 });

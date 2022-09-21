@@ -13,16 +13,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const CustomError_1 = __importDefault(require("../helpers/CustomError"));
-const projects_service_1 = __importDefault(require("../services/projects.service"));
 class ProjectController {
-    constructor(service = new projects_service_1.default()) {
+    constructor(service) {
         this.service = service;
         this.getAll = this.getAll.bind(this);
+        this.getByID = this.getByID.bind(this);
         this.create = this.create.bind(this);
-        this.editAll = this.editAll.bind(this);
+        this.edit = this.edit.bind(this);
         this.exclude = this.exclude.bind(this);
     }
-    ;
     getAll(_req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
@@ -36,7 +35,19 @@ class ProjectController {
             }
         });
     }
-    ;
+    getByID(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const result = yield this.service.getByID(Number(req.params.id));
+                if (result.message)
+                    throw new CustomError_1.default(result);
+                return res.status(result.code).json(result.data);
+            }
+            catch (error) {
+                next(error);
+            }
+        });
+    }
     create(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
@@ -51,13 +62,12 @@ class ProjectController {
             }
         });
     }
-    ;
-    editAll(req, res, next) {
+    edit(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const payload = req.body;
                 payload.id = Number(req.params.id);
-                const result = yield this.service.editAll(payload);
+                const result = yield this.service.edit(payload);
                 if (result.message)
                     throw new CustomError_1.default(result);
                 return res.status(result.code).json(result.data);
@@ -67,7 +77,6 @@ class ProjectController {
             }
         });
     }
-    ;
     exclude(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
@@ -81,7 +90,5 @@ class ProjectController {
             }
         });
     }
-    ;
 }
 exports.default = ProjectController;
-;

@@ -16,22 +16,19 @@ const index_1 = __importDefault(require("../database/models/index"));
 const project_model_1 = __importDefault(require("../database/models/project.model"));
 const httpStatus_1 = __importDefault(require("../helpers/httpStatus"));
 const projects_validations_1 = __importDefault(require("../validations/projects.validations"));
-class ProjectService {
-    constructor(database = project_model_1.default, sequelize = index_1.default) {
-        this.database = database;
+class ProjectTransaction {
+    constructor(model = project_model_1.default, sequelize = index_1.default) {
+        this.model = model;
         this.sequelize = sequelize;
     }
-    ;
-    transactionCreate(payload) {
+    transactCreate(payload) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { title, description, linkToRepo, linkToProd, thumbnail, status } = payload;
             try {
-                const transaction = yield this.sequelize.transaction((t) => __awaiter(this, void 0, void 0, function* () {
-                    const result = yield this.database.create({ title, description, linkToRepo,
-                        linkToProd, thumbnail, status }, { transaction: t });
+                const transactOP = yield this.sequelize.transaction((t) => __awaiter(this, void 0, void 0, function* () {
+                    const result = yield this.model.create(Object.assign({}, payload), { transaction: t });
                     return { data: result, code: httpStatus_1.default.CREATED };
                 }));
-                return transaction;
+                return transactOP;
             }
             catch (error) {
                 const err = error;
@@ -39,17 +36,15 @@ class ProjectService {
             }
         });
     }
-    ;
-    transactionEdit(payload) {
+    transactEdit(payload) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id, title, description, linkToRepo, linkToProd, thumbnail, status } = payload;
             try {
-                const transaction = this.sequelize.transaction((t) => __awaiter(this, void 0, void 0, function* () {
-                    yield this.database.update({ title, description, linkToRepo,
-                        linkToProd, thumbnail, status }, { where: { id }, transaction: t });
+                const transactOP = yield this.sequelize.transaction((t) => __awaiter(this, void 0, void 0, function* () {
+                    const id = payload.id;
+                    yield this.model.update(Object.assign({}, payload), { where: { id }, transaction: t });
                     return { data: payload, code: httpStatus_1.default.CREATED };
                 }));
-                return transaction;
+                return transactOP;
             }
             catch (error) {
                 const err = error;
@@ -57,41 +52,46 @@ class ProjectService {
             }
         });
     }
-    ;
+}
+class ProjectService extends ProjectTransaction {
     getAll() {
         return __awaiter(this, void 0, void 0, function* () {
-            const result = yield this.database.findAll();
+            const result = yield this.model.findAll();
             return { data: result, code: httpStatus_1.default.OK };
         });
     }
-    ;
+    getByID(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const result = yield this.model.findByPk(id);
+            if (result === null) {
+                return { message: "ID doesn't exist", code: httpStatus_1.default.BAD_REQUEST };
+            }
+            return { data: result, code: httpStatus_1.default.OK };
+        });
+    }
     create(payload) {
         return __awaiter(this, void 0, void 0, function* () {
             const validation = projects_validations_1.default.create(payload);
             if (validation.message)
                 return validation;
-            const create = yield this.transactionCreate(payload);
+            const create = yield this.transactCreate(payload);
             return create;
         });
     }
-    ;
-    editAll(payload) {
+    edit(payload) {
         return __awaiter(this, void 0, void 0, function* () {
             const validation = projects_validations_1.default.edit(payload);
             if (validation.message)
                 return validation;
-            const create = yield this.transactionEdit(payload);
+            const create = yield this.transactEdit(payload);
             return create;
         });
     }
-    ;
     exclude(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield this.database.destroy({ where: { id } });
+            yield this.model.destroy({ where: { id } });
             return { code: httpStatus_1.default.DELETED };
         });
     }
-    ;
 }
 exports.default = ProjectService;
-;
