@@ -1,41 +1,23 @@
-import { Model, INTEGER } from 'sequelize';
+import { Model, ForeignKey, Column, Table } from 'sequelize-typescript';
+import { INTEGER } from 'sequelize';
+
 import ProjectModel from './project.model';
 import CategoryModel from './category.model';
-import db from './index';
 
-class ProjectCategoryModel extends Model {
-  projectId!: number;
-  categoryId!: number;
-}
-
-ProjectCategoryModel.init({
-  projectId: {
-    type: INTEGER,
-    primaryKey: true,
-  },
-  categoryId: {
-    type: INTEGER,
-    primaryKey: true,
-  },
-}, {
-  sequelize: db,
-  tableName: 'project_category',
+@Table({
+  tableName: 'projectCategories',
   underscored: true,
   timestamps: false,
-});
+})
 
-CategoryModel.belongsToMany(ProjectModel, {
-  as: 'project',
-  through: ProjectCategoryModel,
-  foreignKey: 'project_id',
-  otherKey: 'category_id',
-});
+class ProjectCategoryModel extends Model {
+  @ForeignKey(() => ProjectModel)
+  @Column(INTEGER)
+  projectId!: number;
 
-ProjectModel.belongsToMany(CategoryModel, {
-  as: 'category',
-  through: ProjectCategoryModel,
-  foreignKey: 'category_id',
-  otherKey: 'project_id',
-});
+  @ForeignKey(() => CategoryModel)
+  @Column(INTEGER)
+  categoryId!: number;
+}
 
 export default ProjectCategoryModel;

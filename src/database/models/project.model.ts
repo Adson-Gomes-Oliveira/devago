@@ -1,34 +1,34 @@
-import { BOOLEAN, INTEGER, Model, STRING, TEXT } from 'sequelize';
-import db from './index';
+import { Model, BelongsToMany, Column, Table, PrimaryKey } from 'sequelize-typescript';
+import { INTEGER, STRING, BOOLEAN } from 'sequelize';
 
-class ProjectModel extends Model {
-  id!: number;
-  title!: string;
-  description!: string;
-  linkToRepo!: string;
-  linkToProd!: string;
-  thumbnail!: string;
-  status!: boolean;
-}
+import CategoryModel from './category.model';
+import ProjectCategoryModel from './projectCategory.model';
 
-ProjectModel.init({
-  id: {
-    type: INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  title: STRING,
-  description: TEXT,
-  linkToRepo: STRING,
-  linkToProd: STRING,
-  thumbnail: STRING,
-  status: BOOLEAN,
-}, {
-  sequelize: db,
-  tableName: 'project',
+@Table({
+  tableName: 'projects',
   modelName: 'ProjectModel',
   underscored: true,
-});
+})
+
+class ProjectModel extends Model {
+  @BelongsToMany(() => CategoryModel, () => ProjectCategoryModel)
+  categories!: CategoryModel[]
+
+  @PrimaryKey
+  @Column(INTEGER)
+  id!: number;
+  @Column(STRING)
+  title!: string;
+  @Column(STRING)
+  description!: string;
+  @Column(STRING)
+  linkToRepo!: string;
+  @Column(STRING)
+  linkToProd!: string;
+  @Column(STRING)
+  thumbnail!: string;
+  @Column(BOOLEAN)
+  status!: boolean;
+}
 
 export default ProjectModel;

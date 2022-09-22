@@ -1,24 +1,24 @@
-import { Model, INTEGER, STRING } from 'sequelize';
-import db from './index';
+import { Model, BelongsToMany, Column, Table, PrimaryKey } from 'sequelize-typescript';
+import { INTEGER, STRING } from 'sequelize';
 
-class CategoryModel extends Model {
-  id!: string;
-  name!: string;
-}
+import ProjectModel from './project.model';
+import ProjectCategoryModel from './projectCategory.model';
 
-CategoryModel.init({
-  id: {
-    type: INTEGER,
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  name: STRING,
-}, {
-  sequelize: db,
-  tableName: 'category',
+@Table({
+  tableName: 'categories',
   modelName: 'CategoryModel',
   timestamps: false,
-});
+})
+
+class CategoryModel extends Model {
+  @BelongsToMany(() => ProjectModel, () => ProjectCategoryModel)
+  projects!: ProjectModel[]
+
+  @PrimaryKey
+  @Column(INTEGER)
+  id!: number;
+  @Column(STRING)
+  name!: string;
+}
 
 export default CategoryModel;
