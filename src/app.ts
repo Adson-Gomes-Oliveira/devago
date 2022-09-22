@@ -17,6 +17,7 @@ app.get('/', (_req: Request, res: Response) => {
 }); //root route for health check
 
 app.use('/projects', routes.ProjectsRoutes);
+app.use('/categories', routes.CategoriesRoutes);
 app.use(error);
 
 export default app;

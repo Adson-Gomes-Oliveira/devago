@@ -9,4 +9,8 @@ interface IService {
   exclude(id: number): Promise<IResult>;
 }
 
+export interface IMinService {
+  getAll(): Promise<IResult>
+}
+
 export default IService;
