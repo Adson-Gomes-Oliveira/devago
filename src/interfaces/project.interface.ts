@@ -5,7 +5,7 @@ interface IProject<T> {
   linkToRepo: string;
   linkToProd: string;
   thumbnail: string;
-  status: boolean;
+  status?: boolean;
   categoryIds?: number[];
 }
 

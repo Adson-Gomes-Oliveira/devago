@@ -19,10 +19,6 @@ __decorate([
     (0, sequelize_typescript_1.BelongsToMany)(() => category_model_1.default, () => projectCategory_model_1.default)
 ], ProjectModel.prototype, "categories", void 0);
 __decorate([
-    sequelize_typescript_1.PrimaryKey,
-    (0, sequelize_typescript_1.Column)(sequelize_1.INTEGER)
-], ProjectModel.prototype, "id", void 0);
-__decorate([
     (0, sequelize_typescript_1.Column)(sequelize_1.STRING)
 ], ProjectModel.prototype, "title", void 0);
 __decorate([

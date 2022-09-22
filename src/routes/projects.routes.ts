@@ -6,7 +6,7 @@ const router = express.Router();
 const service = new ProjectService();
 const controller = new ProjectController(service); 
 
-router.get('/', controller.getAll);
+router.get('/categories', controller.getAll);
 router.get('/:id', controller.getByID);
 router.post('/', controller.create);
 router.put('/:id', controller.edit);

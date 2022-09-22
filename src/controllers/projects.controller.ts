@@ -13,9 +13,18 @@ class ProjectController {
     this.exclude = this.exclude.bind(this);
   }
 
-  async getAll (_req: Request, res: Response, next: NextFunction)
+  async getAll (req: Request, res: Response, next: NextFunction)
   : Promise<Response | undefined> {
     try {
+      const { includes } = req.query;
+      
+      if (includes === 'true') {
+        const result: IResult = await this.service.getAllWithCategories();
+        if (result.message) throw new CustomError(result);
+
+        return res.status(result.code).json(result.data);
+      }
+
       const result: IResult = await this.service.getAll();
       if (result.message) throw new CustomError(result);
 

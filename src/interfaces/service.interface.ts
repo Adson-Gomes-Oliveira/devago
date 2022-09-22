@@ -2,6 +2,7 @@ import IResult from './result.interface';
 
 interface IService {
   getAll(): Promise<IResult>;
+  getAllWithCategories(): Promise<IResult>;
   getByID(id: number): Promise<IResult>;
   create(payload: unknown): Promise<IResult>;
   edit(payload: unknown): Promise<IResult>;

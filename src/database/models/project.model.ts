@@ -1,5 +1,5 @@
-import { Model, BelongsToMany, Column, Table, PrimaryKey } from 'sequelize-typescript';
-import { INTEGER, STRING, BOOLEAN } from 'sequelize';
+import { Model, BelongsToMany, Column, Table } from 'sequelize-typescript';
+import { STRING, BOOLEAN } from 'sequelize';
 
 import CategoryModel from './category.model';
 import ProjectCategoryModel from './projectCategory.model';
@@ -14,9 +14,6 @@ class ProjectModel extends Model {
   @BelongsToMany(() => CategoryModel, () => ProjectCategoryModel)
   categories!: CategoryModel[]
 
-  @PrimaryKey
-  @Column(INTEGER)
-  id!: number;
   @Column(STRING)
   title!: string;
   @Column(STRING)

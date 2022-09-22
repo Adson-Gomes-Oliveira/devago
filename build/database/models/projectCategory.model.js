@@ -16,10 +16,12 @@ const category_model_1 = __importDefault(require("./category.model"));
 let ProjectCategoryModel = class ProjectCategoryModel extends sequelize_typescript_1.Model {
 };
 __decorate([
+    sequelize_typescript_1.PrimaryKey,
     (0, sequelize_typescript_1.ForeignKey)(() => project_model_1.default),
     (0, sequelize_typescript_1.Column)(sequelize_1.INTEGER)
 ], ProjectCategoryModel.prototype, "projectId", void 0);
 __decorate([
+    sequelize_typescript_1.PrimaryKey,
     (0, sequelize_typescript_1.ForeignKey)(() => category_model_1.default),
     (0, sequelize_typescript_1.Column)(sequelize_1.INTEGER)
 ], ProjectCategoryModel.prototype, "categoryId", void 0);
