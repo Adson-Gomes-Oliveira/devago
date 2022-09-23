@@ -112,7 +112,11 @@ implements IService {
   }
 
   public async getByID(id: number): Promise<IResult> {
-    const result: IProject<number> | null = await this.model.findByPk(id);
+    const result: IProject<number> | null = await this.model.findByPk(id, {
+      include: [
+        { model: CategoryModel, as: 'categories', through: { attributes: [] } }
+      ]
+    });
     if (result === null) {
       return { message: "ID doesn't exist", code: HttpStatus.BAD_REQUEST };
     }
