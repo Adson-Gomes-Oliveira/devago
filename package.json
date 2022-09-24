@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node ./build/server.js",
-    "metadata": "npm install reflect-metadata rxjs",
     "build": "tsc",
     "dev": "tsnd --respawn --transpile-only ./src/server.ts",
     "db:reset": "npx -y tsc && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
