@@ -1,5 +1,7 @@
 import { ReactElement } from 'react';
 
+import './style.console.css';
+
 export default function Console(): ReactElement {
   return (
     <form className="console-control-admin">
@@ -15,6 +17,7 @@ export default function Console(): ReactElement {
           <span>Content</span>
           <textarea
             id="post-content"
+            rows={5}
           />
         </label>
       </div>
@@ -27,6 +30,19 @@ export default function Console(): ReactElement {
             type="text"
           />
         </label>
+        <label htmlFor="post-categories">
+          <span>Categories</span>
+          <select id="post-categories">
+            <option value="" id="default-option">Select Category</option>
+          </select>
+          <button
+            type="button"
+          >
+            +
+          </button>
+        </label>
+      </div>
+      <div className="console-links">
         <label htmlFor="post-repo">
           <span>Link to Repository</span>
           <input
@@ -41,11 +57,12 @@ export default function Console(): ReactElement {
             type="text"
           />
         </label>
-        <label htmlFor="post-categories">
-          <span>Categories</span>
-          <select id="post-categories"></select>
-        </label>
       </div>
+      <button
+        type="button"
+      >
+        CREATE POST
+      </button>
     </form>
   );
 }

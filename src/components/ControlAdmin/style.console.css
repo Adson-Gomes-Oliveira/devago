@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ---------- GENERAL SETTINGS ---------- */
+  .console-control-admin {
+    @apply w-[80%] flex flex-col;
+  }
+
+  .console-control-admin span {
+    @apply my-3 mr-3 font-bebas text-lg;
+  }
+
+  .console-control-admin button:nth-child(4) {
+    @apply mt-5 py-2 border rounded font-semibold text-white bg-darkenBackground;
+  }
+
+  .console-control-admin input, textarea, select {
+    @apply border border-black rounded;
+  }
+
+  .console-control-admin input {
+    @apply p-1 px-2;
+  }
+
+  /* ---------- CREATE POST MAIN SECTIONS ---------- */
+  .console-main {
+    @apply flex flex-col;
+  }
+
+  .console-main label {
+    @apply flex flex-col;
+  }
+
+  .console-main input {
+    @apply capitalize font-semibold;
+  }
+
+  .console-main textarea {
+    @apply pl-2 pt-2;
+  }
+
+  /* ---------- GENERAL POST DETAILS SECTIONS ---------- */
+  .console-details {
+    @apply mt-8 flex justify-between items-center;
+  }
+
+  .console-details select {
+    @apply py-1 px-2 text-white bg-darkenBackground;
+  }
+
+  .console-details button {
+    @apply ml-2 text-3xl text-darkenBackground font-bold bg-transparent;
+  }
+
+  /* ---------- GENERAL POST LINKS SECTIONS ---------- */
+  .console-links {
+    @apply mt-8;
+  }
+
+  .console-links label {
+    @apply flex flex-col;
+  }
+}
