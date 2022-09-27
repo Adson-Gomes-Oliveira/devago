@@ -6,7 +6,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/jsx-runtime"
     ],
     "overrides": [
     ],
@@ -20,23 +21,27 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "no-await-in-loop": ["error", "always"],
+        "no-await-in-loop": ["error"],
         "indent": ["error", 2],
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "single"],
         "semi": ["error", "always"],
-        "camelcase": ["warn", "always"],
+        "camelcase": ["warn"],
         "complexity": ["error", 6],
         "default-case": ["error"],
         "max-depth": ["error", 5],
-        "max-lines-per-function": ["error", 20],
-        "no-else-return": ["error", "always"],
-        "no-magic-numbers": ["warn", "always"],
+        "no-else-return": ["error"],
+        "no-magic-numbers": ["warn"],
         "array-bracket-spacing": ["error", "always"],
         "arrow-parens": ["error", "always"],
         "block-spacing": ["error", "always"],
-        "comma-dangle": ["warn", "always"],
-        "jsx-quotes": ["warn", "always"],
+        "comma-dangle": ["warn", {
+            "arrays": "never",
+            "objects": "always",
+            "imports": "never",
+            "exports": "always",
+            "functions": "always"
+        }],
         "keyword-spacing": ["error", { "before": true }],
         "max-len": ["error", { "code": 80 }],
         "object-curly-spacing": ["error", "always"]

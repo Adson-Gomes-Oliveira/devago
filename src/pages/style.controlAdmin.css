@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .control-admin {
+    @apply w-full flex bg-default;
+  }
+
+  .control-admin-body {
+    @apply w-full;
+  }
+}

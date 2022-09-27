@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .panel-control-admin {
+    @apply w-full py-8 flex justify-center;
+  }
+  .panel-control-admin h1 {
+    @apply text-3xl font-oswald font-bold;
+  }
+}

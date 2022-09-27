@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .sidebar-control-admin {
+    @apply min-w-[20%] h-screen bg-lightDarkenBackground;
+  }
+  .sidebar-header {
+    @apply py-5 font-semibold text-2xl text-white flex justify-center items-end bg-darkenBackground;
+  }
+  .sidebar-header span {
+    @apply ml-2 text-sm;
+  }
+  .sidebar-nav {
+    @apply mt-5 text-white font-semibold;
+  }
+  .sidebar-nav ul li {
+    @apply py-3 cursor-pointer;
+  }
+  .sidebar-nav ul li span {
+    @apply ml-5;
+  }
+  .sidebar-nav ul li:hover {
+    @apply bg-darkenBackground;
+  }
+  .sidebar-footer {
+    @apply mt-3 w-full flex flex-col items-center;
+  }
+  .sidebar-footer span {
+    @apply text-sm text-white;
+  }
+}
