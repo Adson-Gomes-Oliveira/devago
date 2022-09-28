@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  .panel-control-admin {
+  .panel-admin {
     @apply w-full py-8 flex flex-col items-center;
   }
-  .panel-control-admin h1 {
-    @apply text-3xl font-oswald font-bold;
+  .panel-admin h1 {
+    @apply text-3xl italic font-oswald font-bold;
   }
 }

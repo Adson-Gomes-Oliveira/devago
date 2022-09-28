@@ -1,10 +1,8 @@
-import { ReactElement } from 'react';
-
 import './style.sidebar.css';
 
-export default function Sidebar(): ReactElement {
+export default function Sidebar(): JSX.Element {
   return (
-    <section className="sidebar-control-admin">
+    <section className="sidebar-admin">
       <div className="sidebar-header">
         <h1>Control Panel</h1>
         <span>v1.0.0</span>

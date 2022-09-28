@@ -4,23 +4,23 @@
 
 @layer base {
   /* ---------- GENERAL SETTINGS ---------- */
-  .console-control-admin {
+  .console-admin {
     @apply w-[80%] flex flex-col;
   }
 
-  .console-control-admin span {
+  .console-admin span {
     @apply my-3 mr-3 font-bebas text-lg;
   }
 
-  .console-control-admin button:nth-child(4) {
+  .console-admin button:nth-child(4) {
     @apply mt-5 py-2 border rounded font-semibold text-white bg-darkenBackground;
   }
 
-  .console-control-admin input, textarea, select {
+  .console-admin input, textarea, select {
     @apply border border-black rounded;
   }
 
-  .console-control-admin input {
+  .console-admin input {
     @apply p-1 px-2;
   }
 
