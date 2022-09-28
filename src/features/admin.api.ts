@@ -1,10 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ICategory } from '../interface/Admin.interfaces';
+import { ICategory, IProject } from '../interface/Admin.interfaces';
 
 export const adminAPI = createApi({
   reducerPath: 'adminAPI',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://devago-backend.herokuapp.com/',
+    baseUrl: 'https://devago-backend.herokuapp.com',
   }),
   endpoints(builder) {
     return {
@@ -12,9 +12,16 @@ export const adminAPI = createApi({
         query() {
           return '/categories';
         }
-      })
+      }),
+      postProject: builder.mutation<IProject, Omit<IProject, 'id'>>({
+        query: (project) => ({
+          url: '/projects',
+          method: 'POST',
+          body: project,
+        }),
+      }), 
     };
   }
 });
 
-export const { useGetCategoriesQuery } = adminAPI;
+export const { useGetCategoriesQuery, usePostProjectMutation } = adminAPI;

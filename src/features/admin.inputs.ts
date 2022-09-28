@@ -1,6 +1,7 @@
 import { ICategory } from './../interface/Admin.interfaces';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IAdminInputState } from '../interface/Admin.interfaces';
+import { IMPOSSIBLE_ID } from '../components/admin/Console';
 
 const INITIAL_THUMB_SLICE_ONE = 'https://t4.ftcdn.net/jpg/04/00/24/31/360_F_40';
 const INITIAL_THUMB_SLICE_TWO = '0243185_BOxON3h9avMUX10RsDkt3pJ8iQx72kS3.jpg';
@@ -36,6 +37,13 @@ const adminInputSlice = createSlice({
       state.categories = [ ...state.categories, payload.payload ];
     },
     removeCategoryFromPost(state, payload: PayloadAction<number>) {
+      if (payload.payload === IMPOSSIBLE_ID) {
+        state.categories = state.categories
+          .filter((cat) => cat.id === payload.payload);
+
+        return;
+      }
+
       state.categories = state.categories
         .filter((cat) => cat.id !== payload.payload);
     }

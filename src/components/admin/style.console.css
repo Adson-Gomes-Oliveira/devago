@@ -12,10 +12,6 @@
     @apply my-3 mr-3 font-bebas text-lg;
   }
 
-  .console-admin button:nth-child(4) {
-    @apply mt-5 py-2 border rounded font-semibold text-white bg-darkenBackground;
-  }
-
   .console-admin input, textarea, select {
     @apply border border-black rounded;
   }
@@ -81,5 +77,17 @@
 
   .console-links label {
     @apply flex flex-col;
+  }
+
+  .create-button {
+    @apply mt-5 py-2 border rounded font-semibold text-black;
+  }
+
+  .create-button:hover {
+    @apply text-white bg-gray-900;
+  }
+
+  .create-button:disabled {
+    @apply hidden;
   }
 }

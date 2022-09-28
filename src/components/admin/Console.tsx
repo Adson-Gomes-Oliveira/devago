@@ -1,6 +1,7 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 
-import { useGetCategoriesQuery } from '../../features/admin.api';
+import { useGetCategoriesQuery,
+  usePostProjectMutation } from '../../features/admin.api';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
   setCategory,
@@ -10,14 +11,28 @@ import {
 } from '../../features/admin.inputs'; 
 import './style.console.css';
 import { ICategory } from '../../interface/Admin.interfaces';
+import { setButton } from '../../features/admin.general';
+
+export const FOUND_POSITION = 0;
+export const MIN_CATEGORIES = 1;
+export const IMPOSSIBLE_ID = 99;
 
 export default function Console(): JSX.Element {
   const dispatch = useAppDispatch();
   const stateInputs = useAppSelector((state) => state.adminInputs);
   const stateGeneral = useAppSelector((state) => state.adminGeneral);
-  const { data = [], isLoading } = useGetCategoriesQuery();
+  const { data = [] } = useGetCategoriesQuery();
+  const [ createPost, createPostResult ] = usePostProjectMutation();
 
-  const FOUND_POSITION = 0;
+  useEffect(() => {
+    if (!Object.values(stateInputs).includes('')) dispatch(setButton(false));
+
+    if (stateInputs.categories.length < MIN_CATEGORIES) {
+      dispatch(setButton(true));
+    }
+
+    if (Object.values(stateInputs).includes('')) dispatch(setButton(true));
+  }, [ stateInputs ]);
 
   function handleCreationForm(event
     : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
@@ -49,6 +64,38 @@ export default function Console(): JSX.Element {
   function handleRemoveCategory(cat: ICategory) {
     const { id } = cat;
     dispatch(removeCategoryFromPost(id));
+  }
+
+  function createNewPost() {
+    const getCategoryIDs = stateInputs.categories.map((cat) => cat.id);
+
+    createPost({
+      title: stateInputs.title,
+      description: stateInputs.content,
+      linkToRepo: stateInputs.linkToRepo,
+      linkToProd: stateInputs.linkToProd,
+      thumbnail: stateInputs.thumbnail,
+      categoryIds: [ ...getCategoryIDs ],
+    });
+
+    if (createPostResult.error) {
+      return console.log(createPostResult.error);
+    }
+
+    dispatch(removeCategoryFromPost(IMPOSSIBLE_ID));
+    dispatch(setInputs({
+      title: '',
+      content: '',
+      linkToRepo: '',
+      linkToProd: '',
+      thumbnail: '',
+      category: {
+        id: 1,
+        name: 'FRONT-END',
+      },
+      categories: []
+    }));
+
   }
 
   return (
@@ -154,6 +201,9 @@ export default function Console(): JSX.Element {
       </div>
       <button
         type="button"
+        className="create-button"
+        disabled={stateGeneral.isButtonOff}
+        onClick={createNewPost}
       >
         CREATE POST
       </button>

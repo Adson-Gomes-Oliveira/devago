@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IAdminGeneralState } from '../interface/Admin.interfaces';
 
 const INITIAL_STATE: IAdminGeneralState = {
-  isButtonOff: false,
+  isButtonOff: true,
 };
 
 const adminGeneralSlice = createSlice({
