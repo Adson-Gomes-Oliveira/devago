@@ -1,3 +1,4 @@
+import { ICategory } from './../interface/Admin.interfaces';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IAdminInputState } from '../interface/Admin.interfaces';
 
@@ -7,7 +8,10 @@ const INITIAL_STATE: IAdminInputState = {
   linkToRepo: '',
   linkToProd: '',
   thumbnail: '',
-  category: 0,
+  category: {
+    id: 0,
+    name: ''
+  },
   categories: [],
 };
 
@@ -22,16 +26,20 @@ const adminInputSlice = createSlice({
       state.linkToProd = payload.payload.linkToProd;
       state.thumbnail = payload.payload.thumbnail;
     },
-    setCategory(state, payload: PayloadAction<number>) {
+    setCategory(state, payload: PayloadAction<ICategory>) {
       state.category = payload.payload;
     },
-    setCategoriesToPost(state, payload: PayloadAction<number>) {
+    setCategoriesToPost(state, payload: PayloadAction<ICategory>) {
       state.categories = [ ...state.categories, payload.payload ];
+    },
+    removeCategoryFromPost(state, payload: PayloadAction<number>) {
+      state.categories = state.categories
+        .filter((cat) => cat.id !== payload.payload);
     }
   }
 });
 
 export const { setInputs, setCategory,
-  setCategoriesToPost } = adminInputSlice.actions;
+  setCategoriesToPost, removeCategoryFromPost } = adminInputSlice.actions;
 
 export default adminInputSlice.reducer;

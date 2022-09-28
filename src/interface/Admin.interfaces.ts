@@ -4,8 +4,8 @@ export interface IAdminInputState {
   linkToRepo: string;
   linkToProd: string;
   thumbnail: string;
-  category: number;
-  categories: number[];
+  category: ICategory;
+  categories: ICategory[];
 }
 
 export interface ICategory {
