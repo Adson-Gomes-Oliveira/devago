@@ -19,10 +19,6 @@ export default function Console(): JSX.Element {
 
   const FOUND_POSITION = 0;
 
-  // useEffect(() => {
-  //   dispatch(setCategory(getCategories()));
-  // }, []);
-
   function handleCreationForm(event
     : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void {
     const { id, value } = event.target;
@@ -111,21 +107,29 @@ export default function Console(): JSX.Element {
         </label>
       </div>
 
-      <div className="console-categories">
-        {stateInputs.categories.map((cat) => {
-          const { id, name } = cat;
-          return (
-            <div key={id}>
-              <span>{name}</span>
-              <button
-                type="button"
-                onClick={() => handleRemoveCategory(cat)}
-              >
-                x
-              </button>
-            </div>
-          );
-        })}
+      <div className="console-details-extended">
+        <div className="console-details-extended-thumbnail">
+          <img
+            src={stateInputs.thumbnail}
+            alt="Thumbnail for the actual post"
+          />
+        </div>
+        <div className="console-details-extended-categories">
+          {stateInputs.categories.map((cat) => {
+            const { id, name } = cat;
+            return (
+              <div key={id}>
+                <span>{name}</span>
+                <button
+                  type="button"
+                  onClick={() => handleRemoveCategory(cat)}
+                >
+                  x
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       <div className="console-links">

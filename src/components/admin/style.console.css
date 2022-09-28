@@ -54,11 +54,23 @@
     @apply ml-2 text-3xl text-darkenBackground font-bold bg-transparent;
   }
 
-  .console-categories {
-    @apply mt-2 w-[60%] flex flex-row-reverse flex-wrap self-end;
+  .console-details-extended {
+    @apply mt-2 flex justify-between;
   }
 
-  .console-categories div {
+  .console-details-extended-thumbnail {
+    @apply w-[50%] max-h-60 border-2 flex flex-col justify-center border-darkenBackground;
+  }
+
+  .console-details-extended-thumbnail img {
+    @apply w-[98%] h-[95%] self-center;
+  }
+
+  .console-details-extended-categories {
+    @apply w-[45%] flex flex-row-reverse flex-wrap self-start;
+  }
+
+  .console-details-extended-categories div {
     @apply my-2 mx-1 py-0.5 px-2 w-fit flex items-baseline bg-gray-200;
   }
 
