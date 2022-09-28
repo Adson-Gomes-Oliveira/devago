@@ -54,6 +54,14 @@
     @apply ml-2 text-3xl text-darkenBackground font-bold bg-transparent;
   }
 
+  .console-categories {
+    @apply mt-2 w-[60%] flex flex-row-reverse flex-wrap self-end;
+  }
+
+  .console-categories div {
+    @apply my-2 mx-1 py-0.5 px-2 w-fit flex items-baseline bg-gray-200;
+  }
+
   /* ---------- GENERAL POST LINKS SECTIONS ---------- */
   .console-links {
     @apply mt-8;

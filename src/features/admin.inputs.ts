@@ -24,9 +24,14 @@ const adminInputSlice = createSlice({
     },
     setCategory(state, payload: PayloadAction<number>) {
       state.category = payload.payload;
+    },
+    setCategoriesToPost(state, payload: PayloadAction<number>) {
+      state.categories = [ ...state.categories, payload.payload ];
     }
   }
 });
 
-export const { setInputs, setCategory } = adminInputSlice.actions;
+export const { setInputs, setCategory,
+  setCategoriesToPost } = adminInputSlice.actions;
+
 export default adminInputSlice.reducer;

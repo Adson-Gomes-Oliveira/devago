@@ -2,8 +2,9 @@ import { useEffect, useCallback } from 'react';
 
 import { useGetCategoriesQuery } from '../../features/admin.api';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { setCategory, setInputs, 
+  setCategoriesToPost } from '../../features/admin.inputs'; 
 import './style.console.css';
-import { setCategory, setInputs } from '../../features/admin.inputs';
 
 export default function Console(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -33,6 +34,10 @@ export default function Console(): JSX.Element {
     
     const categoryID = data.filter((cat) => cat.name === value)[FOUND_POSITION];
     dispatch(setCategory(categoryID.id));
+  }
+
+  function handleAddCategory() {
+    dispatch(setCategoriesToPost(stateInputs.category));
   }
 
   return (
@@ -74,7 +79,6 @@ export default function Console(): JSX.Element {
             id="categories"
             onChange={handleCategory}
           >
-            <option value="Select-Category">Select Category</option>
             {data.map((cat) => {
               const { id, name } = cat;
               
@@ -85,11 +89,30 @@ export default function Console(): JSX.Element {
           </select>
           <button
             type="button"
+            onClick={handleAddCategory}
           >
             +
           </button>
         </label>
       </div>
+
+      <div className="console-categories">
+        {stateInputs.categories.map((catID) => {
+          const getCategoryName = data.find((cat) => cat.id === catID);
+          return (
+            <div key={getCategoryName?.id}>
+              <span>{getCategoryName?.name}</span>
+              <button
+                type="button"
+                onClick={handleAddCategory}
+              >
+                x
+              </button>
+            </div>
+          );
+        })}
+      </div>
+      
       <div className="console-links">
         <label htmlFor="linkToRepo">
           <span>Link to Repository</span>
