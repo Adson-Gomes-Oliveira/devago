@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  .sidebar-control-admin {
-    @apply min-w-[20%] h-screen bg-lightDarkenBackground;
+  .sidebar-admin {
+    @apply min-w-[20%] 2xl:h-screen bg-lightDarkenBackground;
   }
   .sidebar-header {
     @apply py-5 font-semibold text-2xl text-white flex justify-center items-end bg-darkenBackground;
@@ -29,5 +29,9 @@
   }
   .sidebar-footer span {
     @apply text-sm text-white;
+  }
+
+  .selected-option {
+    @apply bg-darkenBackground;
   }
 }

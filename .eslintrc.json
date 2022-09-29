@@ -35,15 +35,8 @@
         "array-bracket-spacing": ["error", "always"],
         "arrow-parens": ["error", "always"],
         "block-spacing": ["error", "always"],
-        "comma-dangle": ["warn", {
-            "arrays": "never",
-            "objects": "always",
-            "imports": "never",
-            "exports": "always",
-            "functions": "always"
-        }],
         "keyword-spacing": ["error", { "before": true }],
-        "max-len": ["error", { "code": 80 }],
+        "max-len": ["error", { "code": 80, "ignoreComments": true }],
         "object-curly-spacing": ["error", "always"]
     }
 }

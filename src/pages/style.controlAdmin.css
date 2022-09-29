@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  .control-admin {
+  .admin {
     @apply w-full flex bg-default;
   }
 
-  .control-admin-body {
+  .admin-body {
     @apply w-full;
   }
 }
