@@ -3,7 +3,4 @@
 @tailwind utilities;
 
 @layer base {
-  .articles {
-    @apply bg-default;
-  }
 }
