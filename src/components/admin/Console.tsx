@@ -1,17 +1,19 @@
 import { useEffect } from 'react';
 
-import { useGetCategoriesQuery,
-  usePostProjectMutation } from '../../features/admin.api';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { ICategory } from '../../interface/Admin.interfaces';
+import { setButton } from '../../features/admin.general';
 import {
   setCategory,
   setInputs, 
   setCategoriesToPost,
   removeCategoryFromPost
-} from '../../features/admin.inputs'; 
+} from '../../features/admin.inputs';
+import { 
+  useGetCategoriesQuery,
+  usePostProjectMutation
+} from '../../features/admin.api';
 import './style.console.css';
-import { ICategory } from '../../interface/Admin.interfaces';
-import { setButton } from '../../features/admin.general';
 
 export const FOUND_POSITION = 0;
 export const MIN_CATEGORIES = 1;

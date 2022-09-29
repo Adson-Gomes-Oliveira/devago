@@ -1,3 +1,5 @@
+export type ConsoleModeType = 'CREATE' | 'EDIT' | 'DELETE';
+
 export interface IAdminInputState {
   title: string;
   content: string;
@@ -24,5 +26,6 @@ export interface ICategory {
 
 export interface IAdminGeneralState {
   isButtonOff: boolean;
+  consoleMode: ConsoleModeType;
 }
 

@@ -30,4 +30,8 @@
   .sidebar-footer span {
     @apply text-sm text-white;
   }
+
+  .selected-option {
+    @apply bg-darkenBackground;
+  }
 }
