@@ -18,6 +18,8 @@ import './style.console.css';
 export const FOUND_POSITION = 0;
 export const MIN_CATEGORIES = 1;
 export const IMPOSSIBLE_ID = 99;
+const INITIAL_THUMB_SLICE_ONE = 'https://t4.ftcdn.net/jpg/04/00/24/31/360_F_40';
+const INITIAL_THUMB_SLICE_TWO = '0243185_BOxON3h9avMUX10RsDkt3pJ8iQx72kS3.jpg';
 
 export default function Console(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -159,8 +161,10 @@ export default function Console(): JSX.Element {
       <div className="console-details-extended">
         <div className="console-details-extended-thumbnail">
           <img
-            src={stateInputs.thumbnail}
-            alt="Thumbnail for the actual post"
+            src={stateInputs.thumbnail === '' ?
+              INITIAL_THUMB_SLICE_ONE + INITIAL_THUMB_SLICE_TWO :
+              stateInputs.thumbnail}
+            alt="Post Thumbnail"
           />
         </div>
         <div className="console-details-extended-categories">
