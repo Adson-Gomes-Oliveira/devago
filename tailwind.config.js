@@ -12,6 +12,7 @@ module.exports = {
         default: '#F4F5F6',
         darkenBackground: '#292B2C',
         lightDarkenBackground: '#293438',
+        projectBlue: '#1486A8',
       },
     },
   },
