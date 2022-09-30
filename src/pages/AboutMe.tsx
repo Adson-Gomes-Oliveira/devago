@@ -1,5 +1,5 @@
-import ParticlesBackground from '../../helpers/particles/ParticlesBG';
-import Header from './Header';
+import ParticlesBackground from '../helpers/particles/ParticlesBG';
+import Header from '../components/articles/Header';
 import './style.aboutme.css';
 
 export default function AboutMe(): JSX.Element {
