@@ -6,8 +6,4 @@
   .admin {
     @apply w-full flex bg-default;
   }
-
-  .admin-body {
-    @apply w-full;
-  }
 }
