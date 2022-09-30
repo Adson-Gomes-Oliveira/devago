@@ -5,10 +5,6 @@ export default function Header(): JSX.Element {
   return (
     <header className="articles-header">
       <img src={LogoDevago} alt="Logomarca Devago" />
-      <div className="header-menu">
-        <ul>
-        </ul>
-      </div>
     </header>
   );
 }

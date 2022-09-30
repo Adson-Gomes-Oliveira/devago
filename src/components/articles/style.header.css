@@ -9,14 +9,4 @@
   .articles-header img {
     @apply mt-4 ml-4 w-[30%];
   }
-  .header-menu {
-    @apply mt-4;
-  }
-  .header-menu button {
-    @apply mx-2 px-2 border-2 border-projectBlue
-  }
-
-  .header-menu button span {
-    @apply font-bebas text-2xl text-projectBlue;
-  }
 }
