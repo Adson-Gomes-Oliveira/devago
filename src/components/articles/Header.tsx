@@ -7,8 +7,6 @@ export default function Header(): JSX.Element {
       <img src={LogoDevago} alt="Logomarca Devago" />
       <div className="header-menu">
         <ul>
-          <button type="button"><span>ARTIGOS</span></button>
-          <button type="button"><span>PROJETOS</span></button>
         </ul>
       </div>
     </header>

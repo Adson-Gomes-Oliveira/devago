@@ -2,7 +2,7 @@ const configParticles = {
   autoPlay: true,
   background: {
     color: {
-      value: '#F4F5F6'
+      value: '#000'
     },
     image: '',
     position: '',
@@ -144,7 +144,7 @@ const configParticles = {
             speed: 2
           },
           size: {
-            value: 5,
+            value: 10,
             animation: {
               enable: true,
               speed: 5,
@@ -227,7 +227,7 @@ const configParticles = {
       }
     },
     color: {
-      value: '#292B2C',
+      value: '#F4F5F6',
       animation: {
         h: {
           count: 0,
@@ -350,7 +350,7 @@ const configParticles = {
         enable: false,
         length: 10,
         fillColor: {
-          value: '#000000'
+          value: '#F4F5F6'
         }
       },
       vibrate: false,
@@ -564,7 +564,7 @@ const configParticles = {
     links: {
       blink: false,
       color: {
-        value: '#292B2C'
+        value: '#F4F5F6'
       },
       consent: false,
       distance: 100,

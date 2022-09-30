@@ -4,10 +4,10 @@
 
 @layer base {
   .articles-header {
-    @apply flex flex-col items-center;
+    @apply flex flex-col;
   }
   .articles-header img {
-    @apply mt-4 w-[60%];
+    @apply mt-4 ml-4 w-[30%];
   }
   .header-menu {
     @apply mt-4;

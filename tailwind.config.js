@@ -10,7 +10,7 @@ module.exports = {
       },
       colors: {
         default: '#F4F5F6',
-        darkenBackground: '#292B2C',
+        darkenBackground: 'rgba(41, 43, 44, 0.75)',
         lightDarkenBackground: '#293438',
         projectBlue: '#1486A8',
       },
