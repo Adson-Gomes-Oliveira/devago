@@ -53,7 +53,7 @@ const configParticles = {
     },
     modes: {
       attract: {
-        distance: 200,
+        distance: 250,
         duration: 0.4,
         easing: 'ease-out-quad',
         factor: 1,

@@ -7,7 +7,7 @@
     @apply flex flex-col items-center;
   }
   .articles-header img {
-    @apply mt-2 w-[60%];
+    @apply mt-4 w-[60%];
   }
   .header-menu {
     @apply mt-4;
