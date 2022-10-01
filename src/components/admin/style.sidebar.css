@@ -4,7 +4,7 @@
 
 @layer base {
   .sidebar-admin {
-    @apply min-w-[20%] 2xl:h-screen bg-lightDarkenBackground;
+    @apply min-w-[20%] 2xl:h-screen bg-lightBackground;
   }
   .sidebar-header {
     @apply py-5 font-semibold text-2xl text-white flex justify-center items-end bg-darkenBackground;

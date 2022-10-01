@@ -22,6 +22,12 @@ body {
   src: url('./assets/fonts/Oswald-VariableFont_wght.ttf');
 }
 
+@font-face {
+  font-family: 'montserrat';
+  src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

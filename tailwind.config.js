@@ -7,12 +7,14 @@ module.exports = {
       fontFamily: {
         'bebas': [ 'bebasNeue', 'sans-serif' ],
         'oswald': [ 'oswaldVariable', 'sans-serif' ],
+        'montserrat': [ 'montserrat', 'sans-serif' ],
       },
       colors: {
         default: '#F4F5F6',
         darkenBackground: 'rgba(41, 43, 44, 0.75)',
-        lightDarkenBackground: '#293438',
-        projectBlue: '#1486A8',
+        lightBackground: '#293438',
+        projectDarkenBlue: '#1486A8',
+        projectLightBlue: '#32B7E3',
       },
     },
   },
