@@ -21,6 +21,9 @@ __decorate([
 __decorate([
     (0, sequelize_typescript_1.Column)(sequelize_1.STRING)
 ], CategoryModel.prototype, "name", void 0);
+__decorate([
+    (0, sequelize_typescript_1.Column)(sequelize_1.STRING)
+], CategoryModel.prototype, "type", void 0);
 CategoryModel = __decorate([
     (0, sequelize_typescript_1.Table)({
         tableName: 'categories',
