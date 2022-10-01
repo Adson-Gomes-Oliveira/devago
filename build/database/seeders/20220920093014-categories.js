@@ -5,75 +5,83 @@ module.exports = {
     await queryInterface.bulkInsert('categories', [
       {
         id: 1,
-        name: 'FRONT-END',
+        name: 'FRONTEND',
+        type: 'label',
       },
       {
         id: 2,
-        name: 'BACK-END',
+        name: 'BACKEND',
+        type: 'label',
       },
       {
         id: 3,
-        name: 'FULL-STACK',
-      },
-      {
-        id: 4,
-        name: 'DEV-DIARY',
-      },
-      {
-        id: 5,
-        name: 'HTML/CSS',
+        name: 'FULLSTACK',
+        type: 'label',
       },
       {
         id: 6,
-        name: 'REACT.js',
+        name: 'REACT',
+        type: 'tech',
       },
       {
         id: 7,
-        name: 'REDUX'
-      },
-      {
-        id: 8,
-        name: 'FRAMEWORK-CSS',
+        name: 'REDUX',
+        type: 'tech',
       },
       {
         id: 9,
         name: 'DOCKER',
+        type: 'tech',
       },
       {
         id: 10,
-        name: 'NODE.js',
+        name: 'NODE',
+        type: 'tech',
       },
       {
         id: 11,
         name: 'SQL',
+        type: 'tech',
       },
       {
         id: 12,
         name: 'EXPRESS',
+        type: 'tech',
       },
       {
         id: 13,
         name: 'SEQUELIZE',
+        type: 'tech',
       },
       {
         id: 14,
         name: 'JAVASCRIPT',
+        type: 'tech',
       },
       {
         id: 15,
         name: 'TYPESCRIPT',
+        type: 'tech',
+      },
+      {
+        id: 16,
+        name: 'TAILWIND-CSS',
+        type: 'tech',
       },
       {
         id: 17,
-        name: 'DEPLOY'
+        name: 'STYLED-COMPONENTS',
+        type: 'tech',
       },
       {
         id: 18,
-        name: 'CLEAN-CODE-AND-ARCHITECTURE'
+        name: 'BOOTSTRAP',
+        type: 'tech',
       },
       {
         id: 19,
-        name: 'VARIED',
+        name: 'MATERIAL-UI',
+        type: 'tech',
       },
     ], {
       timestamps: false,
