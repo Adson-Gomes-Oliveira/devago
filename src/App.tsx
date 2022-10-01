@@ -1,17 +1,31 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
-import Home from './pages/Home';
 import Admin from './pages/Admin';
-import AboutMe from './components/about/AboutMe';
+import AboutMe from './pages/AboutMe';
+import Header from './components/home/Header';
+import Footer from './components/home/Footer';
+import ParticlesBackground from './helpers/particles/ParticlesBG';
+
+import './app.css';
 
 function App() {
+  const location = useLocation();
+
   return (
-    <Routes>
-      <Route path='/admin' element={<Admin />} />
-      <Route path='/' element={<Home Children={AboutMe}/>} />
-      <Route path='/projects' element={<Home Children={AboutMe}/>} />
-      <Route path='*' element={<h1>Do not exist</h1>} />
-    </Routes>
+    <section className="home">
+      <ParticlesBackground />
+      <Header />
+      <AnimatePresence>
+        <Routes location={location} key={location.pathname}>
+          <Route path='/' element={<AboutMe />} />
+          <Route path='/projects' element={<AboutMe />} />
+          <Route path='/admin' element={<Admin />} />
+          <Route path='*' element={<h1>Do not exist</h1>} />
+        </Routes>
+      </AnimatePresence>
+      <Footer />
+    </section>
   );
 }
 
