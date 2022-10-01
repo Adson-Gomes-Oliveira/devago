@@ -8,6 +8,7 @@ import Footer from './components/home/Footer';
 import ParticlesBackground from './helpers/particles/ParticlesBG';
 
 import './app.css';
+import Projects from './pages/Projects';
 
 function App() {
   const location = useLocation();
@@ -19,7 +20,7 @@ function App() {
       <AnimatePresence>
         <Routes location={location} key={location.pathname}>
           <Route path='/' element={<AboutMe />} />
-          <Route path='/projects' element={<AboutMe />} />
+          <Route path='/projects' element={<Projects />} />
           <Route path='/admin' element={<Admin />} />
           <Route path='*' element={<h1>Do not exist</h1>} />
         </Routes>

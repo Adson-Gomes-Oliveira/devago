@@ -5,7 +5,7 @@ import DevPicture from '../assets/images/dev-picture.png';
 
 import './style.aboutme.css';
 
-export default function AboutMe():JSX.Element {
+export default function AboutMe(): JSX.Element {
   const navigate = useNavigate();
 
   function redirect() {

@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .projects {
+
+  }
+  .toggle-stack {
+    @apply my-5 flex justify-center;
+  }
+  .toggle-stack button {
+    @apply min-w-[40%] mx-2 p-2 text-projectLightBlue border-2 border-projectLightBlue flex justify-center items-center;
+  }
+}
