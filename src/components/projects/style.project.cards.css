@@ -16,6 +16,6 @@
     @apply mr-1 text-default font-oswald;
   }
   .card-stacks img {
-    @apply mx-1 w-[10%];
+    @apply mx-1 w-[8%];
   }
 }

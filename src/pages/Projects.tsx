@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
+import { useNavigate } from 'react-router-dom';
 
 import ProjectCards from '../components/projects/ProjectCards';
 import { ICategory, IGetProject } from '../interface/Admin.interfaces';
@@ -16,6 +17,8 @@ export default function Projects() {
   const { data: dataCategories } = useGetCategoriesQuery();
   const [ stacks, setStacks ] = useState<ICategory[]>([]);
   const [ skills, setSkills ] = useState<ICategory[]>([]);
+  const [ alert, setAlert ] = useState<boolean>(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const stacksRender = dataCategories
@@ -35,10 +38,11 @@ export default function Projects() {
       <div className="header-projects">
         <h1>Projetos Realizados</h1>
         <p>Abaixo se encontram meus projetos de maior orgulho.
-          No meu GitHub você encontrará varios outros projetos.</p>
+          Ao clicar a página irá te redirecionar para o projeto 
+          no GitHub e lá você também encontrará varios outros projetos.</p>
       </div>
       <div className="navigate-projects">
-        <button type="button">
+        <button type="button" onClick={() => navigate('/')}>
           HOME
           <span className="material-icons-outlined">home</span>
         </button>
@@ -47,7 +51,15 @@ export default function Projects() {
           <span className="material-icons-outlined">navigate_next</span>
         </button>
       </div>
-      <div className="filter-projects">
+      <div className={`update-alert ${!alert && 'hidden'}`}>
+        <span className="material-icons-outlined">tips_and_updates</span>
+        <p>As próximas atualizações trarão filtros para os projetos
+          e será possivel acessar detalhes dos projetos direto do site.</p>
+        <button type="button" onClick={() => setAlert(false)}>
+          <span className="material-icons-outlined">close</span>
+        </button>
+      </div>
+      <div className="filter-projects hidden">
         <span className="material-icons-outlined">filter_alt</span>
         <select name="" id="stacks">
           {stacks.map((cat) => {

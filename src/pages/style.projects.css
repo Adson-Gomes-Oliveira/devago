@@ -4,7 +4,7 @@
 
 @layer base {
   .projects {
-
+    @apply flex flex-col;
   }
   .header-projects {
     @apply mt-10 pl-4;
@@ -23,6 +23,12 @@
   }
   .navigate-projects span {
     @apply ml-1;
+  }
+  .update-alert {
+    @apply p-2 w-[90%] flex self-center items-start bg-projectLightBlue;
+  }
+  .update-alert span {
+    @apply mr-2;
   }
   .filter-projects {
     @apply px-4 text-default flex items-center;

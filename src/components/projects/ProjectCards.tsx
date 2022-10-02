@@ -19,7 +19,7 @@ export default function ProjectCards({ data }: IDataProject) {
           <div key={uuidv4()} className="project-card">
             <img className="card-thumb" src={thumbnail} alt={title} />
             <div className='card-stacks'>
-              <span>Principais Tecnologias:</span>
+              <span>Tecnologias:</span>
               <CategoriesThumb categories={categories} />
             </div>
           </div>
