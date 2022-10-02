@@ -46,6 +46,8 @@ export default function Contact(): JSX.Element {
           <span className="material-icons-outlined icon">language</span>
           <a
             href="https://www.efset.org/cert/w2TNg9"
+            rel="noreferrer"
+            target="_blank"
           >
             <span>EFSET English Certificate C2 Advanced</span>
           </a>
@@ -54,6 +56,8 @@ export default function Contact(): JSX.Element {
           <span className="material-icons-outlined icon">code</span>
           <a
             href={TRYBE_CERT_ONE+TRYBE_CERT_TWO}
+            rel="noreferrer"
+            target="_blank"
           >
             <span>Certificado de Desenvolvimento Front-End</span>
           </a>

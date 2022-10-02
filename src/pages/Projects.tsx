@@ -18,7 +18,7 @@ export default function Projects() {
   const [ stacks, setStacks ] = useState<ICategory[]>([]);
   const [ skills, setSkills ] = useState<ICategory[]>([]);
   const [ alert, setAlert ] = useState<boolean>(true);
-  const [ motionD, setMotionD ] = useState<string>('-100%');
+  const [ motionD, setMotionD ] = useState<string>('0%');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,11 +34,11 @@ export default function Projects() {
     }
   }, [ dataCategories ]);
 
-  function redirect(path: string): void {
-    const pathD = path === '/' ? '100%' : '-100';
-    setMotionD(pathD);
-    navigate(path);
-  }
+  useEffect(() => {
+    if (motionD === '100%') navigate('/');
+    if (motionD === '-100%') navigate('/contact');
+
+  }, [ motionD ]);
 
   return (
     <motion.section
@@ -54,11 +54,11 @@ export default function Projects() {
           no GitHub e lá você também encontrará varios outros projetos.</p>
       </div>
       <div className="navigate-projects">
-        <button type="button" onClick={() => redirect('/')}>
+        <button type="button" onClick={() => setMotionD('100%')}>
           HOME
           <span className="material-icons-outlined">home</span>
         </button>
-        <button type="button" onClick={() => redirect('/contact')}>
+        <button type="button" onClick={() => setMotionD('-100%')}>
           CONTATO
           <span className="material-icons-outlined">navigate_next</span>
         </button>
