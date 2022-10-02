@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .contact {
+    @apply mt-10 flex flex-col;
+  }
+  .contact button {
+    @apply w-[90%] my-2 p-2 text-projectLightBlue border-2 border-projectLightBlue flex justify-center items-center self-center;
+  }
+  .contact h1 {
+    @apply ml-4 font-bebas text-3xl text-projectLightBlue;
+  }
+  .items-contact {
+    @apply pl-4 mt-2 flex flex-col text-default;
+  }
+  .items-contact div {
+    @apply my-1 flex items-center;
+  }
+  .items-contact .icon {
+    @apply mr-3 text-projectLightBlue;
+  }
+  .info-contact {
+    @apply pl-4 mt-10 flex flex-col text-default;
+  }
+  .info-contact h2 {
+    @apply font-bebas text-3xl text-projectLightBlue;
+  }
+  .info-contact span:first-of-type {
+    @apply my-3;
+  }
+  .info-contact div {
+    @apply my-2 mr-2 flex items-center;
+  }
+  .info-contact div span:last-child {
+    @apply underline underline-offset-4;
+  }
+  .info-contact .icon {
+    @apply mr-3 text-projectLightBlue;
+  }
+  .footer-contact {
+    @apply my-5 text-default text-center flex flex-col items-center;
+  }
+  .footer-contact span {
+    @apply text-sm;
+  }
+}

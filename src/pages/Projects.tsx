@@ -5,12 +5,15 @@ import { useNavigate } from 'react-router-dom';
 
 import ProjectCards from '../components/projects/ProjectCards';
 import { ICategory, IGetProject } from '../interface/Admin.interfaces';
+import { setLoading } from '../features/loader';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 import {
   useGetCategoriesQuery,
   useGetProjectsQuery,
 } from '../features/admin.api';
 
 import './style.projects.css';
+import Loader from '../components/Loader';
 
 export default function Projects() {
   const { data: dataProjects, isLoading } = useGetProjectsQuery();
@@ -18,7 +21,15 @@ export default function Projects() {
   const [ stacks, setStacks ] = useState<ICategory[]>([]);
   const [ skills, setSkills ] = useState<ICategory[]>([]);
   const [ alert, setAlert ] = useState<boolean>(true);
+  const [ motionD, setMotionD ] = useState<string>('0%');
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (isLoading) dispatch(setLoading(true));
+    if (!isLoading) dispatch(setLoading(false));
+
+  }, [ isLoading ]);
 
   useEffect(() => {
     const stacksRender = dataCategories
@@ -33,8 +44,19 @@ export default function Projects() {
     }
   }, [ dataCategories ]);
 
+  useEffect(() => {
+    if (motionD === '100%') navigate('/');
+    if (motionD === '-100%') navigate('/contact');
+
+  }, [ motionD ]);
+
   return (
-    <motion.section className="projects">
+    <motion.section
+      className="projects"
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      exit={{ x: motionD, transition: { duration: 0.3 } }}
+    >
       <div className="header-projects">
         <h1>Projetos Realizados</h1>
         <p>Abaixo se encontram meus projetos de maior orgulho.
@@ -42,11 +64,11 @@ export default function Projects() {
           no GitHub e lá você também encontrará varios outros projetos.</p>
       </div>
       <div className="navigate-projects">
-        <button type="button" onClick={() => navigate('/')}>
+        <button type="button" onClick={() => setMotionD('100%')}>
           HOME
           <span className="material-icons-outlined">home</span>
         </button>
-        <button type="button">
+        <button type="button" onClick={() => setMotionD('-100%')}>
           CONTATO
           <span className="material-icons-outlined">navigate_next</span>
         </button>

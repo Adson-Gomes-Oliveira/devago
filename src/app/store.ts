@@ -14,12 +14,14 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import adminInputsReducer from '../features/admin.inputs';
 import adminGeneralReducer from '../features/admin.general';
+import loadingReduces from '../features/loader';
 import { adminAPI } from '../features/admin.api';
 
 export const store = configureStore({ // Configuring the Store: Passing the reducers and Async Thunk Functions
   reducer: {
     adminInputs: adminInputsReducer,
     adminGeneral: adminGeneralReducer,
+    loadingToggle: loadingReduces,
     [adminAPI.reducerPath]: adminAPI.reducer,
   },
   middleware: (getDefaultMiddleware) => {

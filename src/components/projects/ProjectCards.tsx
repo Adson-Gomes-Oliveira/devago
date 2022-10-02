@@ -12,12 +12,17 @@ export default function ProjectCards({ data }: IDataProject) {
   return (
     <section>
       {data && data.map((project) => {
-        const { title, thumbnail, categories } = project;
-        const techCategories = categories.filter((cat) => cat.type === 'tech');
+        const { title, thumbnail, categories,
+          linkToProd, linkToRepo } = project;
 
         return (
           <div key={uuidv4()} className="project-card">
-            <img className="card-thumb" src={thumbnail} alt={title} />
+            <a
+              href={linkToProd !== '' ? linkToProd : linkToRepo}
+              rel="noreferrer"
+              target="_blank">
+              <img className="card-thumb" src={thumbnail} alt={title} />
+            </a>
             <div className='card-stacks'>
               <span>Tecnologias:</span>
               <CategoriesThumb categories={categories} />
