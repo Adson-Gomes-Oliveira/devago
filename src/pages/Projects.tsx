@@ -35,7 +35,8 @@ export default function Projects() {
   }, [ dataCategories ]);
 
   function redirect(path: string): void {
-    setMotionD('100%');
+    const pathD = path === '/' ? '100%' : '-100';
+    setMotionD(pathD);
     navigate(path);
   }
 
@@ -57,7 +58,7 @@ export default function Projects() {
           HOME
           <span className="material-icons-outlined">home</span>
         </button>
-        <button type="button">
+        <button type="button" onClick={() => redirect('/contact')}>
           CONTATO
           <span className="material-icons-outlined">navigate_next</span>
         </button>
