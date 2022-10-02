@@ -16,7 +16,7 @@ export default function AboutMe(): JSX.Element {
     <motion.section
       initial={{ width: 0 }}
       animate={{ width: '100%' }}
-      exit={{ x: '-100%', transition: { duration: 0.5 } }}
+      exit={{ x: '-100%', transition: { duration: 0.3 } }}
     >
       <div className="bio">
         <h1>Adson Gomes Oliveira</h1>
