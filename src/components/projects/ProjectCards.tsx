@@ -18,7 +18,7 @@ export default function ProjectCards({ data }: IDataProject) {
         return (
           <div key={uuidv4()} className="project-card">
             <a
-              href={linkToProd ? linkToProd : linkToRepo}
+              href={linkToProd !== '' ? linkToProd : linkToRepo}
               rel="noreferrer"
               target="_blank">
               <img className="card-thumb" src={thumbnail} alt={title} />
