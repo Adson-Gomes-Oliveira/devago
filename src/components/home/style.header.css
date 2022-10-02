@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  .articles-header {
+  .main-header {
     @apply flex flex-col;
   }
-  .articles-header img {
+  .main-header img {
     @apply mt-4 ml-4 w-[30%];
   }
 }
