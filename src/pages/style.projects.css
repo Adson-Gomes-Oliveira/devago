@@ -6,10 +6,34 @@
   .projects {
 
   }
-  .toggle-stack {
+  .header-projects {
+    @apply mt-10 pl-4;
+  }
+  .header-projects h1 {
+    @apply font-bebas text-3xl text-projectLightBlue;
+  }
+  .header-projects p {
+    @apply max-w-[90%] mt-3 text-default font-montserrat;
+  }
+  .navigate-projects {
     @apply my-5 flex justify-center;
   }
-  .toggle-stack button {
-    @apply min-w-[40%] mx-2 p-2 text-projectLightBlue border-2 border-projectLightBlue flex justify-center items-center;
+  .navigate-projects button {
+    @apply min-w-[42%] mx-2 p-2 text-projectLightBlue border-2 border-projectLightBlue flex justify-center items-center;
+  }
+  .navigate-projects span {
+    @apply ml-1;
+  }
+  .filter-projects {
+    @apply px-4 text-default flex items-center;
+  }
+  .filter-projects span{
+    @apply text-2xl;
+  }
+  .filter-projects select {
+    @apply mx-2 w-[40%] h-8 font-oswald bg-lightBackground;
+  }
+  .filter-projects select:focus {
+    @apply outline-none;
   }
 }

@@ -1,40 +1,71 @@
-import { useState } from 'react';
-import { useGetProjectsQuery } from '../features/admin.api';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { v4 as uuidv4 } from 'uuid';
 
-import Frontend from '../components/projects/Frontend';
-import { IGetProject } from '../interface/Admin.interfaces';
+import ProjectCards from '../components/projects/ProjectCards';
+import { ICategory, IGetProject } from '../interface/Admin.interfaces';
+import {
+  useGetCategoriesQuery,
+  useGetProjectsQuery,
+} from '../features/admin.api';
 
 import './style.projects.css';
 
 export default function Projects() {
-  const [ stack, setStack ] = useState('NO_STACK');
-  const { data, isLoading } = useGetProjectsQuery();
-  
+  const { data: dataProjects, isLoading } = useGetProjectsQuery();
+  const { data: dataCategories } = useGetCategoriesQuery();
+  const [ stacks, setStacks ] = useState<ICategory[]>([]);
+  const [ skills, setSkills ] = useState<ICategory[]>([]);
 
-  function changeStack(stack: string): void {
-    setStack(stack);
-  }
+  useEffect(() => {
+    const stacksRender = dataCategories
+    && dataCategories.filter((cat) => cat.type === 'label');
+
+    const skillsRender = dataCategories
+    && dataCategories.filter((cat) => cat.type === 'tech');
+
+    if (dataCategories) {
+      setStacks(stacksRender as ICategory[]);
+      setSkills(skillsRender as ICategory[]);
+    }
+  }, [ dataCategories ]);
 
   return (
-    <motion.section
-      className={`projects ${stack === 'NO_STACK' && 'h-screen'}`}
-    >
-      <div className="toggle-stack">
-        <button
-          type="button"
-          onClick={() => changeStack('FRONTEND')}
-        >
-          <span>FRONT-END</span>
+    <motion.section className="projects">
+      <div className="header-projects">
+        <h1>Projetos Realizados</h1>
+        <p>Abaixo se encontram meus projetos de maior orgulho.
+          No meu GitHub você encontrará varios outros projetos.</p>
+      </div>
+      <div className="navigate-projects">
+        <button type="button">
+          HOME
+          <span className="material-icons-outlined">home</span>
         </button>
-        <button
-          type="button"
-          onClick={() => changeStack('BACKEND')}
-        >
-          <span>BACK-END</span>
+        <button type="button">
+          CONTATO
+          <span className="material-icons-outlined">navigate_next</span>
         </button>
       </div>
-      {stack === 'FRONTEND' && <Frontend data={data as IGetProject[]}/>}
+      <div className="filter-projects">
+        <span className="material-icons-outlined">filter_alt</span>
+        <select name="" id="stacks">
+          {stacks.map((cat) => {
+            return (
+              <option key={uuidv4()} value={cat.name}>{cat.name}</option>
+            );
+          })}
+        </select>
+        <select name="" id="skills">
+          {skills.map((cat) => {
+            return (
+              <option key={uuidv4()} value={cat.name}>{cat.name}</option>
+            );
+          })}
+        </select>
+        <span className="material-icons-outlined">search</span>
+      </div>
+      <ProjectCards data={dataProjects as IGetProject[]} />
     </motion.section>
   );
 }

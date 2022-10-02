@@ -11,7 +11,8 @@ const INITIAL_STATE: IAdminInputState = {
   thumbnail: '',
   category: {
     id: 1,
-    name: 'FRONT-END'
+    name: 'FRONT-END',
+    type: 'label',
   },
   categories: [],
 };
