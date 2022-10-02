@@ -12,6 +12,22 @@ body {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: 'bebasNeue';
+  src: url('./assets/fonts/BebasNeue-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'oswaldVariable';
+  src: url('./assets/fonts/Oswald-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'montserrat';
+  src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

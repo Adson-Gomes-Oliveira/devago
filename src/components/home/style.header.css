@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .main-header {
+    @apply flex flex-col;
+  }
+  .main-header img {
+    @apply mt-4 ml-4 w-[30%];
+  }
+}
