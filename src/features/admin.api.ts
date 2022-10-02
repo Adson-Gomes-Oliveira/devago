@@ -1,5 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ICategory, IProject } from '../interface/Admin.interfaces';
+import {
+  ICategory,
+  IProject,
+  IGetProject
+} from '../interface/Admin.interfaces';
 
 export const adminAPI = createApi({
   reducerPath: 'adminAPI',
@@ -8,6 +12,11 @@ export const adminAPI = createApi({
   }),
   endpoints(builder) {
     return {
+      getProjects: builder.query<IGetProject[], string | void>({
+        query() {
+          return '/projects/categories?includes=true';
+        }
+      }),
       getCategories: builder.query<ICategory[], number | void>({ 
         query() {
           return '/categories';
@@ -24,4 +33,8 @@ export const adminAPI = createApi({
   }
 });
 
-export const { useGetCategoriesQuery, usePostProjectMutation } = adminAPI;
+export const {
+  useGetCategoriesQuery,
+  usePostProjectMutation,
+  useGetProjectsQuery,
+} = adminAPI;

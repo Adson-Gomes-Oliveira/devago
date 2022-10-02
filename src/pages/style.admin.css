@@ -4,6 +4,6 @@
 
 @layer base {
   .admin {
-    @apply w-full flex;
+    @apply w-full flex bg-default;
   }
 }

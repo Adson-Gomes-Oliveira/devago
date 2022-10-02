@@ -96,6 +96,7 @@ export default function Console(): JSX.Element {
       category: {
         id: 1,
         name: 'FRONT-END',
+        type: 'label',
       },
       categories: []
     }));
