@@ -63,26 +63,6 @@ module.exports = {
         name: 'TYPESCRIPT',
         type: 'tech',
       },
-      {
-        id: 16,
-        name: 'TAILWIND-CSS',
-        type: 'tech',
-      },
-      {
-        id: 17,
-        name: 'STYLED-COMPONENTS',
-        type: 'tech',
-      },
-      {
-        id: 18,
-        name: 'BOOTSTRAP',
-        type: 'tech',
-      },
-      {
-        id: 19,
-        name: 'MATERIAL-UI',
-        type: 'tech',
-      },
     ], {
       timestamps: false,
     });
