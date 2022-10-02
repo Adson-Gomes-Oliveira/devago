@@ -6,8 +6,16 @@
   .project-card {
     @apply my-8 flex flex-col items-center;
   }
-
-  .project-card img {
+  .card-thumb {
     @apply w-[90%] border-4 border-projectLightBlue;
+  }
+  .card-stacks {
+    @apply mt-4 ml-4 flex;
+  }
+  .card-stacks span {
+    @apply mr-1 text-default font-oswald;
+  }
+  .card-stacks img {
+    @apply mx-1 w-[10%];
   }
 }
