@@ -10,3 +10,25 @@
     @apply mt-4 ml-4 w-[30%];
   }
 }
+
+/* Breakpoint: large devices */
+@layer base {
+  .main-header {
+    @apply lg:items-center;
+  }
+  .main-header img {
+    @apply lg:ml-0 lg:w-[15%];
+  }
+  .header-nav {
+    @apply mt-4;
+  }
+  .header-nav ul {
+    @apply flex;
+  }
+  .header-nav ul li {
+    @apply mx-4 text-2xl text-default font-bebas cursor-pointer;
+  }
+  .header-nav ul li:hover {
+    @apply text-projectLightBlue;
+  }
+}
