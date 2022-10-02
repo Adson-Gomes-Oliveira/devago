@@ -5,12 +5,15 @@ import { useNavigate } from 'react-router-dom';
 
 import ProjectCards from '../components/projects/ProjectCards';
 import { ICategory, IGetProject } from '../interface/Admin.interfaces';
+import { setLoading } from '../features/loader';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 import {
   useGetCategoriesQuery,
   useGetProjectsQuery,
 } from '../features/admin.api';
 
 import './style.projects.css';
+import Loader from '../components/Loader';
 
 export default function Projects() {
   const { data: dataProjects, isLoading } = useGetProjectsQuery();
@@ -20,6 +23,13 @@ export default function Projects() {
   const [ alert, setAlert ] = useState<boolean>(true);
   const [ motionD, setMotionD ] = useState<string>('0%');
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (isLoading) dispatch(setLoading(true));
+    if (!isLoading) dispatch(setLoading(false));
+
+  }, [ isLoading ]);
 
   useEffect(() => {
     const stacksRender = dataCategories
