@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .loader {
+    @apply w-screen h-screen absolute top-0 left-0 flex flex-col justify-center items-center bg-lightBackground;
+  }
+  .loader img {
+    @apply mb-5 w-[50%];
+  }
+}

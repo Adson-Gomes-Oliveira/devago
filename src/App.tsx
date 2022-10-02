@@ -10,12 +10,14 @@ import Footer from './components/home/Footer';
 import ParticlesBackground from './helpers/particles/ParticlesBG';
 
 import './app.css';
+import Loader from './components/Loader';
 
 function App() {
   const location = useLocation();
 
   return (
     <section className="home">
+      <Loader />
       <ParticlesBackground />
       <Header />
       <AnimatePresence>
