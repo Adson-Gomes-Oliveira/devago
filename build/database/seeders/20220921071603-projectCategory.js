@@ -5,11 +5,11 @@ module.exports = {
     await queryInterface.bulkInsert('projectCategories', [
       {
         project_id: 1,
-        category_id: 1
+        category_id: 6
       },
       {
         project_id: 1,
-        category_id: 3
+        category_id: 14
       },
     ]);
   },
