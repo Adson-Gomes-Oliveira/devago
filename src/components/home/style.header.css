@@ -13,14 +13,11 @@
 
 /* Breakpoint: large devices */
 @layer base {
-  .main-header {
-    @apply lg:items-center;
-  }
   .main-header img {
-    @apply lg:ml-0 lg:w-[15%];
+    @apply lg:ml-0 lg:w-[10%] self-center;
   }
   .header-nav {
-    @apply mt-4;
+    @apply mt-4 flex justify-between;
   }
   .header-nav ul {
     @apply flex;
@@ -30,5 +27,11 @@
   }
   .header-nav ul li:hover {
     @apply text-projectLightBlue;
+  }
+  .header-icons {
+    @apply flex mr-3;
+  }
+  .header-icons a img {
+    @apply mt-0 mx-1 w-[2rem];
   }
 }
