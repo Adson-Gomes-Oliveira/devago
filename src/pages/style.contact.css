@@ -4,7 +4,7 @@
 
 @layer base {
   .contact {
-    @apply mt-10 flex flex-col;
+    @apply mt-10 h-screen flex flex-col;
   }
   .contact button {
     @apply w-[90%] my-2 p-2 text-projectLightBlue border-2 border-projectLightBlue flex justify-center items-center self-center;
