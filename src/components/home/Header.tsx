@@ -22,19 +22,35 @@ export default function Header(): JSX.Element {
           <li onClick={() => navigate('/contact')}>Contato</li>
         </ul>
         <div className="header-icons">
-          <a href="https://wa.me/5577988342289">
+          <a
+            href="https://wa.me/5577988342289"
+            rel="noreferrer"
+            target="_blank"
+          >
             <img src={WhatsappLogo} alt="Icone para Whatsapp" />
           </a>
 
-          <a href="https://www.linkedin.com/in/adson-gomes-oliveira/">
+          <a
+            href="https://www.linkedin.com/in/adson-gomes-oliveira/"
+            rel="noreferrer"
+            target="_blank"
+          >
             <img src={LinkedinLogo} alt="Icone para LinkedIn" />
           </a>
 
-          <a href="https://github.com/Adson-Gomes-Oliveira/">
+          <a
+            href="https://github.com/Adson-Gomes-Oliveira/"
+            rel="noreferrer"
+            target="_blank"
+          >
             <img src={GithubLogo} alt="Icone para Github" />
           </a>
 
-          <a href="https://medium.com/@adson_4490">
+          <a
+            href="https://medium.com/@adson_4490"
+            rel="noreferrer"
+            target="_blank"
+          >
             <img src={MediumLogo} alt="Icone para Medium" />
           </a>
         </div>
