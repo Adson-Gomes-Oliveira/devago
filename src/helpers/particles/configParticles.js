@@ -363,7 +363,7 @@ const configParticles = {
         factor: 1000
       },
       limit: 0,
-      value: 50
+      value: 100
     },
     opacity: {
       random: {
