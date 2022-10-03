@@ -10,7 +10,7 @@ interface IDataProject {
 
 export default function ProjectCards({ data }: IDataProject) {
   return (
-    <section>
+    <section className="projects-card-section">
       {data && data.map((project) => {
         const { title, thumbnail, categories,
           linkToProd, linkToRepo } = project;

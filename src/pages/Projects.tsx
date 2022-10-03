@@ -21,7 +21,6 @@ export default function Projects() {
   const [ stacks, setStacks ] = useState<ICategory[]>([]);
   const [ skills, setSkills ] = useState<ICategory[]>([]);
   const [ alert, setAlert ] = useState<boolean>(true);
-  const [ motionD, setMotionD ] = useState<string>('0%');
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -44,18 +43,12 @@ export default function Projects() {
     }
   }, [ dataCategories ]);
 
-  useEffect(() => {
-    if (motionD === '100%') navigate('/');
-    if (motionD === '-100%') navigate('/contact');
-
-  }, [ motionD ]);
-
   return (
     <motion.section
       className="projects"
       initial={{ width: 0 }}
       animate={{ width: '100%' }}
-      exit={{ x: motionD, transition: { duration: 0.3 } }}
+      exit={{ x: '-100%', transition: { duration: 0.3 } }}
     >
       <div className="header-projects">
         <h1>Projetos Realizados</h1>
@@ -64,11 +57,11 @@ export default function Projects() {
           no GitHub e lá você também encontrará varios outros projetos.</p>
       </div>
       <div className="navigate-projects">
-        <button type="button" onClick={() => setMotionD('100%')}>
+        <button type="button" onClick={() => navigate('/')}>
           HOME
           <span className="material-icons-outlined">home</span>
         </button>
-        <button type="button" onClick={() => setMotionD('-100%')}>
+        <button type="button" onClick={() => navigate('/contact')}>
           CONTATO
           <span className="material-icons-outlined">navigate_next</span>
         </button>

@@ -16,7 +16,7 @@
     @apply max-w-[90%] mt-3 text-default font-montserrat;
   }
   .bio-buttons {
-    @apply w-fit flex flex-col;
+    @apply mt-5 w-fit flex flex-col;
   }
   .bio-buttons button {
     @apply my-2 p-2 text-projectLightBlue border-2 border-projectLightBlue flex items-center;
@@ -26,5 +26,16 @@
   }
   .dev-picture {
     @apply opacity-30;
+  }
+}
+
+
+/* Breakpoint: large devices */
+@layer base {
+  .bio-buttons button:nth-child(2) {
+    @apply lg:hidden;
+  }
+  .dev-picture {
+    @apply 2xl:mt-16;
   }
 }
