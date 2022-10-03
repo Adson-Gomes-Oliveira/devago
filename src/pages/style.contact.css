@@ -46,3 +46,10 @@
     @apply text-sm;
   }
 }
+
+/* Breakpoint: large devices */
+@layer base {
+  .contact button {
+    @apply lg:hidden;
+  }
+}

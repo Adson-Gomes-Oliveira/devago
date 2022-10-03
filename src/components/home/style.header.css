@@ -14,10 +14,10 @@
 /* Breakpoint: large devices */
 @layer base {
   .main-header img {
-    @apply lg:ml-0 lg:w-[10%] self-center;
+    @apply lg:ml-0 lg:w-[10%] lg:self-center;
   }
   .header-nav {
-    @apply mt-4 flex justify-between;
+    @apply mt-4 hidden justify-between lg:flex;
   }
   .header-nav ul {
     @apply flex;

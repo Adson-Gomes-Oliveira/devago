@@ -35,4 +35,7 @@
   .bio-buttons button:nth-child(2) {
     @apply lg:hidden;
   }
+  .dev-picture {
+    @apply 2xl:mt-16;
+  }
 }
