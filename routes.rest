@@ -1,1 +1,0 @@
-DELETE https://devago-backend.herokuapp.com/projects/3 HTTP/1.1
