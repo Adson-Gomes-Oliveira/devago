@@ -1,12 +1,5 @@
-node_modules
+node_modules.tar.gz
+/node_modules
 .env
-build/controllers
-build/helpers
-build/interfaces
-build/middlewares
-build/models
-build/routes
-build/services
-build/validations
-build/app.js
-build/server.js
+/build
+*.http
