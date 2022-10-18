@@ -28,8 +28,8 @@ export default function AboutMe(): JSX.Element {
           projetos, faça download do curriculo clicando no botão abaixo.</p>
         <div className="bio-buttons">
           <a 
-            href='resume.pdf'
-            download='curriculo-adson-dev.pdf'
+            href='Curriculo-Frontend_[ Adson Gomes Oliveira ].pdf'
+            download='Curriculo-Frontend_[ Adson Gomes Oliveira ].pdf'
           >
             <button type="button">
               Download Curriculum
