@@ -6,7 +6,7 @@
 ---
 
 <br/>
-O Devago é um projeto de portfolio de projetos feitos por mim.
+O Devago é um projeto de portfolio com objetivo de disponibilizar aplicações que desenvolvi em conjunto a outras pessoas desenvolvedoras ou individualmente.
 <br/>
 <br/>
 Este código foi desenvolvido individualmente, utilizando metodologias agéis como Kanban,
