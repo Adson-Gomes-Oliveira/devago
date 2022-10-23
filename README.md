@@ -16,7 +16,7 @@ Uma API com CRUD completo de posts para o portfolio da aplicação.
 
 ---
 
-<p align=center>*Projeto desenvolvido 100% por mim*</p>
+<p align=center>*Projeto 100% autoral*</p>
 
 ---
 
