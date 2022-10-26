@@ -1,12 +1,18 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import DevPicture from '../assets/images/dev-picture.png';
+import { useGetCategoriesQuery } from '../features/admin.api';
 
 import './style.aboutme.css';
 
 export default function AboutMe(): JSX.Element {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    useGetCategoriesQuery();
+  }, []);
 
   function redirect() {
     navigate('/projects');
