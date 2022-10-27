@@ -9,9 +9,6 @@
   .project-card {
     @apply my-8 flex flex-col items-center;
   }
-  .project-card a {
-    @apply flex justify-center;
-  }
   .card-thumb {
     @apply w-[90%] border-4 border-projectLightBlue;
   }

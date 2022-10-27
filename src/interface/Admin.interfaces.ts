@@ -25,6 +25,7 @@ export interface IGetProject {
   thumbnail: string;
   status: boolean;
   categories: ICategory[];
+  showMode?: boolean;
 }
 
 export interface IProject {

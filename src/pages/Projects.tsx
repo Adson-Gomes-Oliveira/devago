@@ -13,7 +13,7 @@ import {
 } from '../features/admin.api';
 
 import './style.projects.css';
-import Loader from '../components/Loader';
+import ProjectModal from '../components/projects/ProjectModal';
 
 export default function Projects() {
   const { data: dataProjects, isLoading } = useGetProjectsQuery();
@@ -21,6 +21,7 @@ export default function Projects() {
   const [ stacks, setStacks ] = useState<ICategory[]>([]);
   const [ skills, setSkills ] = useState<ICategory[]>([]);
   const [ alert, setAlert ] = useState<boolean>(true);
+  const showModal = useAppSelector((state) => state.projectModal.showMode);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -68,8 +69,7 @@ export default function Projects() {
       </div>
       <div className={`update-alert ${!alert && 'hidden'}`}>
         <span className="material-icons-outlined">tips_and_updates</span>
-        <p>As próximas atualizações trarão filtros para os projetos
-          e será possivel acessar detalhes dos projetos direto do site.</p>
+        <p>As próximas atualizações trarão filtros para os projetos.</p>
         <button type="button" onClick={() => setAlert(false)}>
           <span className="material-icons-outlined">close</span>
         </button>
@@ -92,6 +92,7 @@ export default function Projects() {
         </select>
         <span className="material-icons-outlined">search</span>
       </div>
+      {showModal && <ProjectModal />}
       <ProjectCards data={dataProjects as IGetProject[]} />
     </motion.section>
   );
