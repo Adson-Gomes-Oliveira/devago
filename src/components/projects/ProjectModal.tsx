@@ -14,6 +14,24 @@ export default function ProjectModal() {
           <CategoriesThumb categories={data.categories} />
         </div>
       </div>
+      <div className="modal-body">
+        <div className="modal-body-bio">
+          <h1>{data.title}</h1>
+          <p>{data.description}</p>
+        </div>
+        <div className="modal-body-button">
+          <a href={data.linkToRepo} target="_blank" rel="noreferrer">
+            <button>
+              <span>Repositório do Projeto</span>
+            </button>
+          </a>
+          <a href={data.linkToRepo} target="_blank" rel="noreferrer">
+            <button>
+              <span>Site do Projeto</span>
+            </button>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
