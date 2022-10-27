@@ -34,6 +34,7 @@ export interface IProject {
   linkToProd: string;
   thumbnail: string;
   categoryIds: number[];
+  showMode?: boolean;
 }
 
 export interface IAdminGeneralState {
