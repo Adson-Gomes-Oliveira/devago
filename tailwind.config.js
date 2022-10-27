@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         default: '#F4F5F6',
         darkenBackground: 'rgba(41, 43, 44, 0.75)',
+        modalBackground: 'rgba(41, 43, 44, 0.95)',
         lightBackground: '#293438',
         projectDarkenBlue: '#1486A8',
         projectLightBlue: '#32B7E3',

@@ -1,28 +1,34 @@
 import { v4 as uuidv4 } from 'uuid';
+
 import { IGetProject } from '../../interface/Admin.interfaces';
+import { setProjectToShow } from '../../features/projectModal';
 import CategoriesThumb from './CategoriesThumb';
 
 import './style.project.cards.css';
+import { useAppDispatch } from '../../app/hooks';
 
 interface IDataProject {
   data: IGetProject[];
 }
 
 export default function ProjectCards({ data }: IDataProject) {
+  const dispatch = useAppDispatch();
+  const handleClickProject = (project: IGetProject): void => {
+    dispatch(setProjectToShow(project));
+  };
+
   return (
     <section className="projects-card-section">
       {data && data.map((project) => {
-        const { title, thumbnail, categories,
-          linkToProd, linkToRepo } = project;
-
+        const { title, thumbnail, categories } = project;
         return (
-          <div key={uuidv4()} className="project-card">
-            <a
-              href={linkToProd !== '' ? linkToProd : linkToRepo}
-              rel="noreferrer"
-              target="_blank">
-              <img className="card-thumb" src={thumbnail} alt={title} />
-            </a>
+          <div
+            key={uuidv4()}
+            className="project-card"
+            role="button"
+            onClick={() => handleClickProject(project)}
+          >
+            <img className="card-thumb" src={thumbnail} alt={title} />
             <div className='card-stacks'>
               <span>Tecnologias:</span>
               <CategoriesThumb categories={categories} />

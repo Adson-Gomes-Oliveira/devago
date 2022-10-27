@@ -25,6 +25,7 @@ export interface IGetProject {
   thumbnail: string;
   status: boolean;
   categories: ICategory[];
+  showMode?: boolean;
 }
 
 export interface IProject {
@@ -34,7 +35,6 @@ export interface IProject {
   linkToProd: string;
   thumbnail: string;
   categoryIds: number[];
-  showMode?: boolean;
 }
 
 export interface IAdminGeneralState {
