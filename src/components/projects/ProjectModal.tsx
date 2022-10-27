@@ -38,11 +38,13 @@ export default function ProjectModal() {
               <span>Repositório do Projeto</span>
             </button>
           </a>
-          <a href={data.linkToRepo} target="_blank" rel="noreferrer">
-            <button>
-              <span>Site do Projeto</span>
-            </button>
-          </a>
+          {data.linkToProd !== 'no_link' && (
+            <a href={data.linkToProd} target="_blank" rel="noreferrer">
+              <button>
+                <span>Site do Projeto</span>
+              </button>
+            </a>
+          )}
         </div>
       </div>
     </div>

@@ -69,8 +69,7 @@ export default function Projects() {
       </div>
       <div className={`update-alert ${!alert && 'hidden'}`}>
         <span className="material-icons-outlined">tips_and_updates</span>
-        <p>As próximas atualizações trarão filtros para os projetos
-          e será possivel acessar detalhes dos projetos direto do site.</p>
+        <p>As próximas atualizações trarão filtros para os projetos.</p>
         <button type="button" onClick={() => setAlert(false)}>
           <span className="material-icons-outlined">close</span>
         </button>
