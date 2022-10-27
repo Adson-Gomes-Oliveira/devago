@@ -7,6 +7,14 @@
     @apply w-screen h-screen fixed top-0 left-0 bg-modalBackground;
   }
 
+  .modal-close-button {
+    @apply m-3 fixed top-0 right-0;
+  }
+
+  .modal-close-button span {
+    @apply font-bold text-3xl text-default;
+  }
+
   .modal-stacks {
     @apply my-4 flex;
   }

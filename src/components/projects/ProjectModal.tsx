@@ -1,13 +1,26 @@
-import { useAppSelector } from '../../app/hooks';
+import {  useAppDispatch, useAppSelector } from '../../app/hooks';
+import { closeProject } from '../../features/projectModal';
 import CategoriesThumb from './CategoriesThumb';
 
 import './style.project.modal.css';
 
 export default function ProjectModal() {
   const data = useAppSelector((state) => state.projectModal);
+  const dispatch = useAppDispatch();
+
+  const handleCloseModal = () => {
+    dispatch(closeProject());
+  };
 
   return (
     <div className="project-modal">
+      <button
+        type="button"
+        className="modal-close-button" 
+        onClick={handleCloseModal}
+      >
+        <span className="material-icons-outlined">close</span>
+      </button>
       <div className="modal-header">
         <img src={data.thumbnail} alt={`Capa do projeto ${data.title}`} />
         <div className="modal-stacks">
