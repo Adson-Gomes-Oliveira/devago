@@ -30,6 +30,9 @@ export default function ProjectModal() {
       <div className="modal-body">
         <div className="modal-body-bio">
           <h1>{data.title}</h1>
+          {data.description.includes('Web App') && (
+            <span><b>* Apenas para dispositivos móveis</b></span>
+          )}
           <p>{data.description}</p>
         </div>
         <div className="modal-body-button">
