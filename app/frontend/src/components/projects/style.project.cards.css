@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .projects-card-section {
+    @apply flex flex-col;
+  }
+  .project-card {
+    @apply my-8 flex flex-col items-center;
+  }
+  .card-thumb {
+    @apply w-[90%] border-4 border-projectLightBlue;
+  }
+  .card-stacks {
+    @apply mt-4 ml-4 flex items-center;
+  }
+  .card-stacks span {
+    @apply mr-1 text-default font-oswald;
+  }
+  .card-stacks img {
+    @apply mx-1 w-[8%];
+  }
+}
+
+/* Breakpoint: large devices */
+@layer base {
+  .projects-card-section {
+    @apply lg:flex-row lg:w-[93%] lg:self-center lg:justify-around lg:flex-wrap;
+  }
+  .project-card {
+    @apply lg:my-16 2xl:my-32 lg:items-start lg:w-[30%];
+  }
+  .card-stacks {
+    @apply lg:ml-5;
+  }
+  .card-stacks img {
+    @apply lg:w-7;
+  }
+}

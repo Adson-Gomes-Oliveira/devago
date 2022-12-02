@@ -1,0 +1,70 @@
+{
+  "name": "devago-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.60",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "axios": "^0.27.2",
+    "emailjs-com": "^3.2.0",
+    "eslint-config-trybe-fundamentals": "^1.1.1",
+    "framer-motion": "^7.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.1",
+    "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.4",
+    "react-tsparticles": "^2.3.2",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "tsparticles": "^2.3.2",
+    "tsparticles-engine": "^2.3.2",
+    "tsparticles-preset-links": "^2.3.2",
+    "typescript": "^4.8.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .ts"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
+    "autoprefixer": "^10.4.12",
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-sonarjs": "^0.15.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
+  }
+}

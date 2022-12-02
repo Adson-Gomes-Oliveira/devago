@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ---------- GENERAL SETTINGS ---------- */
+  .console-admin {
+    @apply w-[80%] flex flex-col;
+  }
+
+  .console-admin span {
+    @apply my-3 mr-3 font-bebas text-lg;
+  }
+
+  .console-admin input, textarea, select {
+    @apply border border-black rounded;
+  }
+
+  .console-admin input {
+    @apply p-1 px-2;
+  }
+
+  /* ---------- CREATE POST MAIN SECTIONS ---------- */
+  .console-main {
+    @apply flex flex-col;
+  }
+
+  .console-main label {
+    @apply flex flex-col;
+  }
+
+  .console-main input {
+    @apply capitalize font-semibold;
+  }
+
+  .console-main textarea {
+    @apply pl-2 pt-2;
+  }
+
+  /* ---------- GENERAL POST DETAILS SECTIONS ---------- */
+  .console-details {
+    @apply mt-8 flex justify-between items-center;
+  }
+
+  .console-details select {
+    @apply py-1 px-2 text-white bg-darkenBackground;
+  }
+
+  .console-details button {
+    @apply ml-2 text-3xl text-darkenBackground font-bold bg-transparent;
+  }
+
+  .console-details-extended {
+    @apply mt-2 flex justify-between;
+  }
+
+  .console-details-extended-thumbnail {
+    @apply w-[50%] max-h-60 border-2 flex flex-col justify-center border-darkenBackground;
+  }
+
+  .console-details-extended-thumbnail img {
+    @apply w-[98%] h-[95%] self-center;
+  }
+
+  .console-details-extended-categories {
+    @apply w-[45%] flex flex-row-reverse flex-wrap self-start;
+  }
+
+  .console-details-extended-categories div {
+    @apply my-2 mx-1 py-0.5 px-2 w-fit flex items-baseline bg-gray-200;
+  }
+
+  /* ---------- GENERAL POST LINKS SECTIONS ---------- */
+  .console-links {
+    @apply mt-8;
+  }
+
+  .console-links label {
+    @apply flex flex-col;
+  }
+
+  .create-button {
+    @apply mt-5 py-2 border rounded font-semibold text-black;
+  }
+
+  .create-button:hover {
+    @apply text-white bg-gray-900;
+  }
+
+  .create-button:disabled {
+    @apply hidden;
+  }
+}

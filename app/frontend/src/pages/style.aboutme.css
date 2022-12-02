@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .bio {
+    @apply mt-10 pl-4 relative z-10;
+  }
+  .bio h1 {
+    @apply font-bebas text-3xl text-projectLightBlue;
+  }
+  .bio h2 {
+    @apply font-bebas text-xl text-default;
+  }
+  .bio p {
+    @apply max-w-[90%] mt-3 text-default font-montserrat;
+  }
+  .bio-buttons {
+    @apply mt-5 w-fit flex flex-col;
+  }
+  .bio-buttons button {
+    @apply my-2 p-2 text-projectLightBlue border-2 border-projectLightBlue flex items-center;
+  }
+  .bio-buttons button span {
+    @apply text-projectLightBlue;
+  }
+  .dev-picture {
+    @apply opacity-30;
+  }
+}
+
+
+/* Breakpoint: large devices */
+@layer base {
+  .bio-buttons button:nth-child(2) {
+    @apply lg:hidden;
+  }
+  .dev-picture {
+    @apply 2xl:mt-16;
+  }
+}

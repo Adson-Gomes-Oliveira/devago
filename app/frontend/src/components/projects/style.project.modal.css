@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .project-modal {
+    @apply w-screen h-screen fixed top-0 left-0 bg-modalBackground;
+  }
+
+  .modal-close-button {
+    @apply m-3 fixed top-0 right-0;
+  }
+
+  .modal-close-button span {
+    @apply font-bold text-3xl text-default;
+  }
+
+  .modal-stacks {
+    @apply my-4 flex;
+  }
+
+  .modal-stacks img {
+    @apply mx-1 w-[8%];
+  }
+
+  .modal-body {
+    @apply my-5 mx-3 text-default;
+  }
+
+  .modal-body-bio {
+    @apply mb-5;
+  }
+
+  .modal-body-bio h1 {
+    @apply mb-3 text-xl font-semibold font-montserrat;
+  }
+
+  .modal-body-bio p {
+    @apply my-3;
+  }
+
+  .modal-body-button {
+    @apply flex flex-col;
+  }
+
+  .modal-body-button button {
+    @apply mb-3 w-full h-12 text-gray-900 text-xl font-bebas bg-projectDarkenBlue;
+  }
+}
+
+/* Breakpoint: large devices */
+@layer base {
+  .project-modal {
+    @apply lg:flex lg:items-center;
+  }
+  .modal-header {
+    @apply lg:m-5 lg:w-[30%];
+  }
+  .modal-body {
+    @apply lg:w-[60%];
+  }
+}
