@@ -10,7 +10,7 @@ const config = {
   host: process.env.DB_HOST,
   port: Number(process.env.DB_PORT),
   models: [ CategoryModel, ProjectModel, ProjectCategoryModel ],
-  dialect: 'postgres',
+  dialect: 'mysql',
 }
 
 module.exports = config;
