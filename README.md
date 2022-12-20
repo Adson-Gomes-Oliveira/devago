@@ -40,7 +40,9 @@ Uma aplicação desenvolvida para disponibilização de projetos por mim realiza
 ```
 git clone git@github.com:Adson-Gomes-Oliveira/Devago-Frontend.git
 ```
->Após o clone ser concluído com sucesso, entre no diretório e utilize o comando `npm install`.
+>Após o clone ser concluído com sucesso, entre no diretório app/frontend e utilize o comando `npm install`.
+
+>Em seguida navegue até app/backend e utilize o comando `npm run dev`
 
 >Utilize `npm start` para iniciar o servidor do projeto localmente.
 
