@@ -38,15 +38,29 @@ Uma aplicação desenvolvida para disponibilização de projetos por mim realiza
 
 >Primeiro faça o clone deste repositório em sua maquina.
 ```
-git clone git@github.com:Adson-Gomes-Oliveira/Devago-Frontend.git
+git clone git@github.com:Adson-Gomes-Oliveira/Devago.git
 ```
 >Após o clone ser concluído com sucesso, entre no diretório app/frontend e utilize o comando `npm install`.
 
->Em seguida navegue até app/backend e utilize o comando `npm run dev`
+>Em seguida, em outra janela do terminal, navegue até app/backend e utilize o comando `npm run dev`
 
->Utilize `npm start` para iniciar o servidor do projeto localmente.
+>Volte para app/frontend e utilize `npm start` para iniciar o servidor do projeto localmente.
 
 </details>  
+
+<details>
+<summary> Como rodar o projeto utilizando docker </summary>
+<br/>
+
+>Primeiro faça o clone deste repositório em sua maquina.
+```
+git clone git@github.com:Adson-Gomes-Oliveira/Devago.git
+```
+>Após o clone ser concluído com sucesso, entre no diretório raiz e utilize o comando `docker-compose up -d --build`.
+
+>Pronto, a aplicação está no ar.
+
+</details> 
 
 
 ### Informações adicionais
