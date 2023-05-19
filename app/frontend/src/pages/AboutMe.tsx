@@ -21,11 +21,10 @@ export default function AboutMe(): JSX.Element {
       <div className="bio">
         <h1>Adson Gomes Oliveira</h1>
         <h2>Software Developer Full-Stack Jr.</h2>
-        <p>Atuo no desenvolvimento de aplicações Front-End e Back-End,
-          prezo pela qualidade,respeito e produtividade.</p>
-        <p>No momento estou em busca da minha primeira oportunidade
-          em programação, aqui você terá acesso aos meus
-          projetos, faça download do curriculo clicando no botão abaixo.</p>
+        <p>Tenho conhecimentos em desenvolvimento Front-End e Back-End,
+          prezo pela qualidade, respeito e produtividade.</p>
+        <p>Atuo como desenvolvedor Back-End na PagoNxt Merchant Solutions Brazil,
+          aqui você terá acesso aos meus projetos.</p>
         <div className="bio-buttons">
           <a 
             href='Curriculo-Fullstack_[ Adson Gomes Oliveira ].pdf'

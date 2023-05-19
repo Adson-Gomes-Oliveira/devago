@@ -23,7 +23,7 @@ export default function Header(): JSX.Element {
         </ul>
         <div className="header-icons">
           <a
-            href="https://wa.me/5577988342289"
+            href="https://wa.me/5577981155625"
             rel="noreferrer"
             target="_blank"
           >

@@ -28,7 +28,7 @@ export default function Contact(): JSX.Element {
         </div>
         <div className="tel" >
           <span className="material-icons-outlined icon">phone</span>
-          <span>{'+55 (77) 98834-2289'}</span>
+          <span>{'+55 (77) 98115-5625'}</span>
         </div>
         <div className="address" >
           <span className="material-icons-outlined icon">home</span>
