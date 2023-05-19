@@ -23,8 +23,8 @@ export default function AboutMe(): JSX.Element {
         <h2>Software Developer Full-Stack Jr.</h2>
         <p>Tenho conhecimentos em desenvolvimento Front-End e Back-End,
           prezo pela qualidade, respeito e produtividade.</p>
-        <p>Atuo como desenvolvedor Back-End na PagoNxt Merchant Solutions Brazil,
-          aqui você terá acesso aos meus projetos.</p>
+        <p>Atuo como desenvolvedor Back-End na PagoNxt Merchant Solutions
+          Brazil, aqui você terá acesso aos meus projetos.</p>
         <div className="bio-buttons">
           <a 
             href='Curriculo-Fullstack_[ Adson Gomes Oliveira ].pdf'

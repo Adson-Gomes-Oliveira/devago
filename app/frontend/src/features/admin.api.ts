@@ -8,7 +8,7 @@ import {
 export const adminAPI = createApi({
   reducerPath: 'adminAPI',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://devago-backend.herokuapp.com',
+    baseUrl: 'https://devago-backend.onrender.com',
   }),
   endpoints(builder) {
     return {
