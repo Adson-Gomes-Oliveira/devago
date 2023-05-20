@@ -25,7 +25,7 @@ services:
         condition: service_healthy
     environment:
       - PORT=3001
-      - DB_URL=postgres://Adson-Gomes-Oliveira:qY0mlbgH2nuN@ep-falling-dream-133931.us-west-2.aws.neon.tech/devago
+      - DB_URL=
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3031"] # Caso utilize outra porta interna para o back, altere ela aqui também
       timeout: 10s
