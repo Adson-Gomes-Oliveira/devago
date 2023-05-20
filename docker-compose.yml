@@ -25,12 +25,7 @@ services:
         condition: service_healthy
     environment:
       - PORT=3001
-      - JWT_SECRET=jwt_secret
-      - DB_USERNAME=root
-      - DB_PASSWORD=password
-      - DB_NAME=Devago-DB
-      - DB_HOST=database
-      - DB_PORT=3306
+      - DB_URL=postgres://Adson-Gomes-Oliveira:qY0mlbgH2nuN@ep-falling-dream-133931.us-west-2.aws.neon.tech/devago
     healthcheck:
       test: ["CMD", "lsof", "-t", "-i:3031"] # Caso utilize outra porta interna para o back, altere ela aqui também
       timeout: 10s
