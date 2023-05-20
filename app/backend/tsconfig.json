@@ -9,6 +9,7 @@
     "forceConsistentCasingInFileNames": true,            
     "strict": true,                                      
     "skipLibCheck": true,
-    "experimentalDecorators": true,                                 
-  }
+    "experimentalDecorators": true,                               
+  },
+  "exclude": ["src/database/migrations", "src/database/seeders"]
 }
