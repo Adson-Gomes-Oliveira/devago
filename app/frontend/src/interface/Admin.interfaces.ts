@@ -3,7 +3,6 @@ export type ConsoleModeType = 'CREATE' | 'EDIT' | 'DELETE';
 export interface ICategory {
   id: number;
   name: string;
-  type: string;
 }
 
 export interface IAdminInputState {
