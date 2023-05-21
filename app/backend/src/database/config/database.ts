@@ -4,6 +4,7 @@ import ProjectModel from '../models/project.model';
 import ProjectCategoryModel from '../models/projectCategory.model';
 
 const config = {
+  username: process.env.DB_USERNAME,
   url: process.env.DB_URL,
   host: process.env.DB_HOST,
   models: [ CategoryModel, ProjectModel, ProjectCategoryModel ],
