@@ -5,6 +5,7 @@ import ProjectCategoryModel from '../models/projectCategory.model';
 
 const config = {
   url: process.env.DB_URL,
+  host: process.env.DB_HOST,
   models: [ CategoryModel, ProjectModel, ProjectCategoryModel ],
   dialect: 'postgres',
   dialectOptions: {
