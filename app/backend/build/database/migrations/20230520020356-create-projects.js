@@ -18,10 +18,12 @@ module.exports = {
       },
       linkToRepo: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        field: 'link_to_repo'
       },
       linkToProd: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        field: 'link_to_prod'
       },
       thumbnail: {
         type: Sequelize.STRING
