@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { IGetProject } from '../../interface/Admin.interfaces';
 import { setProjectToShow } from '../../features/projectModal';
-import CategoriesThumb from './CategoriesThumb';
 
 import './style.project.cards.css';
 import { useAppDispatch } from '../../app/hooks';
@@ -29,9 +28,13 @@ export default function ProjectCards({ data }: IDataProject) {
             onClick={() => handleClickProject(project)}
           >
             <img className="card-thumb" src={thumbnail} alt={title} />
-            <div className='card-stacks'>
+            <div className="card-stacks">
               <span>Tecnologias:</span>
-              <CategoriesThumb categories={categories} />
+              <div className="stacks">
+                {categories.map((cat) => <span key={uuidv4()}>
+                  {cat.name}
+                </span>)}
+              </div>
             </div>
           </div>
         );

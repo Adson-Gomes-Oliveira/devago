@@ -16,9 +16,6 @@ class CategoryModel extends Model {
 
   @Column(STRING)
   name!: string;
-
-  @Column(STRING)
-  type!: string;
 }
 
 export default CategoryModel;
