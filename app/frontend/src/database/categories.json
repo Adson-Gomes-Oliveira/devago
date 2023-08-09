@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "BACKEND",
+        "type": "label"
+    },
+    {
+        "id": 2,
+        "name": "NODE.JS",
+        "type": "tech"
+    },
+    {
+        "id": 3,
+        "name": "EXPRESS",
+        "type": "tech"
+    },
+    {
+        "id": 4,
+        "name": "TYPESCRIPT",
+        "type": "tech"
+    },
+    {
+        "id": 5,
+        "name": "NOSQL",
+        "type": "label"
+    },
+    {
+        "id": 6,
+        "name": "MICROSSERVICES",
+        "type": "label"
+    }
+]

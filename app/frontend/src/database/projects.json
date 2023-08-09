@@ -1,0 +1,74 @@
+[
+    {
+        "id": "1",
+        "title": "Trooper Ecommerce",
+        "description": "Projeto que simula um ecommerce online com diversas funcionalidades, cadastro/login, carrinho de compras, email de confirmação, filtros, páginas de produtos e muito mais. Projeto desenvolvido com arquitetura de micro-serviçose seguindo conceitos do Twelve-Factor-App.",
+        "linkToRepo": "https://github.com/Adson-Gomes-Oliveira/trooper-ecommerce",
+        "linkToProd": "no_link",
+        "thumbnail": "https://i.ibb.co/jLKw3Mx/image.png",
+        "status": true,
+        "categories": [
+            {
+                "id": 2,
+                "name": "NODE.JS",
+                "type": "tech"
+            },
+            {
+                "id": 3,
+                "name": "EXPRESS",
+                "type": "tech"
+            },
+            {
+                "id": 4,
+                "name": "TYPESCRIPT",
+                "type": "tech"
+            },
+            {
+                "id": 5,
+                "name": "NOSQL",
+                "type": "label"
+            },
+            {
+                "id": 6,
+                "name": "MICROSSERVICES",
+                "type": "label"
+            },
+            {
+                "id": 7,
+                "name": "REACT",
+                "type": "tech"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "title": "Trybe Futebol Clube",
+        "description": "Projeto que simula uma tabela de classificação para um campeonato de futebol",
+        "linkToRepo": "https://github.com/Adson-Gomes-Oliveira/trybe-futebol-clube",
+        "linkToProd": "no_link",
+        "thumbnail": "https://i.ibb.co/RNVwR45/image.png",
+        "status": true,
+        "categories": [
+            {
+                "id": 2,
+                "name": "NODE.JS",
+                "type": "tech"
+            },
+            {
+                "id": 3,
+                "name": "EXPRESS",
+                "type": "tech"
+            },
+            {
+                "id": 4,
+                "name": "TYPESCRIPT",
+                "type": "tech"
+            },
+            {
+                "id": 7,
+                "name": "REACT",
+                "type": "tech"
+            }
+        ]
+    }
+]
