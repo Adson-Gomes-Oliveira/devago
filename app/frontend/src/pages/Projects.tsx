@@ -5,44 +5,33 @@ import { useNavigate } from 'react-router-dom';
 
 import ProjectCards from '../components/projects/ProjectCards';
 import { ICategory, IGetProject } from '../interface/Admin.interfaces';
-import { setLoading } from '../features/loader';
-import { useAppDispatch, useAppSelector } from '../app/hooks';
-import {
-  useGetCategoriesQuery,
-  useGetProjectsQuery,
-} from '../features/admin.api';
+import { useAppSelector } from '../app/hooks';
+
+import projects from '../database/projects.json';
+import categories from '../database/categories.json';
 
 import './style.projects.css';
 import ProjectModal from '../components/projects/ProjectModal';
 
 export default function Projects() {
-  const { data: dataProjects, isLoading } = useGetProjectsQuery();
-  const { data: dataCategories } = useGetCategoriesQuery();
   const [ stacks, setStacks ] = useState<ICategory[]>([]);
   const [ skills, setSkills ] = useState<ICategory[]>([]);
   const [ alert, setAlert ] = useState<boolean>(true);
   const showModal = useAppSelector((state) => state.projectModal.showMode);
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (isLoading) dispatch(setLoading(true));
-    if (!isLoading) dispatch(setLoading(false));
+    const stacksRender = categories
+    && categories.filter((cat) => cat.type === 'label');
 
-  }, [ isLoading ]);
+    const skillsRender = categories
+    && categories.filter((cat) => cat.type === 'tech');
 
-  useEffect(() => {
-    const stacksRender = dataCategories
-    && dataCategories.filter((cat) => cat.type === 'label');
-
-    const skillsRender = dataCategories
-    && dataCategories.filter((cat) => cat.type === 'tech');
-
-    if (dataCategories) {
+    if (categories) {
       setStacks(stacksRender as ICategory[]);
       setSkills(skillsRender as ICategory[]);
     }
-  }, [ dataCategories ]);
+  }, [ categories ]);
 
   return (
     <motion.section
@@ -93,7 +82,7 @@ export default function Projects() {
         <span className="material-icons-outlined">search</span>
       </div>
       {showModal && <ProjectModal />}
-      <ProjectCards data={dataProjects as IGetProject[]} />
+      <ProjectCards data={projects as IGetProject[]} />
     </motion.section>
   );
 }

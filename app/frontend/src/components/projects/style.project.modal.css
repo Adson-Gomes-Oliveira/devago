@@ -20,11 +20,11 @@
   }
 
   .modal-stacks img {
-    @apply mx-1 w-[8%];
+    @apply mx-1 w-[4%];
   }
 
   .modal-body {
-    @apply my-5 mx-3 text-default;
+    @apply my-5 mx-3 text-default whitespace-pre-line;
   }
 
   .modal-body-bio {
@@ -54,9 +54,9 @@
     @apply lg:flex lg:items-center;
   }
   .modal-header {
-    @apply lg:m-5 lg:w-[30%];
+    @apply lg:m-5 lg:w-[40%];
   }
   .modal-body {
-    @apply lg:w-[60%];
+    @apply lg:w-[50%];
   }
 }

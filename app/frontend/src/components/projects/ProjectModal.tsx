@@ -12,6 +12,7 @@ export default function ProjectModal() {
     dispatch(closeProject());
   };
 
+
   return (
     <div className="project-modal">
       <button

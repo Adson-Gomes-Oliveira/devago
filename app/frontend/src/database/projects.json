@@ -2,7 +2,7 @@
     {
         "id": "1",
         "title": "Trooper Ecommerce",
-        "description": "Projeto que simula um ecommerce online com diversas funcionalidades, cadastro/login, carrinho de compras, email de confirmação, filtros, páginas de produtos e muito mais. Projeto desenvolvido com arquitetura de micro-serviçose seguindo conceitos do Twelve-Factor-App.",
+        "description": "Projeto que simula um ecommerce online com diversas funcionalidades, cadastro/login, carrinho de compras, email de confirmação, filtros, páginas de produtos e muito mais, desenvolvido com arquitetura de micro-serviçose seguindo conceitos do Twelve-Factor-App.\n\nNeste projeto diversas barreiras e desafios tiveram de ser superados, foi meu primeiro contato com mensageria e banco de dados Redis, construir o sistema necessário para confirmar uma compra de forma assíncrona e ao final enviar um email de confirmação para o usuário trouxe diversos aprendizados.\n\nFoi extremamente interessante criar um gateway para a comunicação do cliente com os microsserviços, além de implementar um sistema de autenticação e autorização confiável e seguro. Utilizar o TwelveFactorApp me ajudou a ter uma melhor organização dos serviços além de me trazer diversos conhecimentos sobre estrutura e arquitetura de software.",
         "linkToRepo": "https://github.com/Adson-Gomes-Oliveira/trooper-ecommerce",
         "linkToProd": "no_link",
         "thumbnail": "https://i.ibb.co/jLKw3Mx/image.png",

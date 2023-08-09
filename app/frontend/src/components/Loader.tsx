@@ -1,23 +1,25 @@
-import { CSSProperties } from 'react';
-import RingLoader from 'react-spinners/RingLoader';
+// import { CSSProperties } from 'react';
+// import RingLoader from 'react-spinners/RingLoader';
 
-import { useAppSelector } from '../app/hooks';
-import DevagoLogo from '../assets/images/devago-light-logo.svg';
-import './style.loader.css';
+// import { useAppSelector } from '../app/hooks';
+// import DevagoLogo from '../assets/images/devago-light-logo.svg';
+// import './style.loader.css';
 
-const customCSSLoader: CSSProperties = {
-};
+// const customCSSLoader: CSSProperties = {
+// };
 
-export default function Loader(): JSX.Element {
-  const isLoading = useAppSelector((state) => state.loadingToggle.isLoading);
+// export default function Loader(): JSX.Element {
+//   const isLoading = useAppSelector((state) => state.loadingToggle.isLoading);
 
-  return (
-    <section className={`loader ${!isLoading && 'hidden'}`}>
-      <RingLoader
-        color="#1486A8"
-        loading={true}
-        cssOverride={customCSSLoader}
-      />
-    </section>
-  );
-}
+//   return (
+//     <section className={`loader ${!isLoading && 'hidden'}`}>
+//       <RingLoader
+//         color="#1486A8"
+//         loading={true}
+//         cssOverride={customCSSLoader}
+//       />
+//     </section>
+//   );
+// }
+
+export {};
