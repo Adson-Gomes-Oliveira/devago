@@ -15,6 +15,9 @@
   .card-stacks {
     @apply mt-4 flex items-center;
   }
+  .card-stacks .stacks {
+    @apply w-4/5 ml-2 flex flex-wrap text-sm;
+  }
   .card-stacks span {
     @apply mr-1 text-default font-oswald;
   }

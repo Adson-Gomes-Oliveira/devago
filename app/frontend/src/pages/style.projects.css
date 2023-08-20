@@ -4,7 +4,7 @@
 
 @layer base {
   .projects {
-    @apply h-screen flex flex-col;
+    @apply flex flex-col;
   }
   .header-projects {
     @apply mt-10 pl-4;

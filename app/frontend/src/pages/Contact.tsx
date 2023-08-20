@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 
 import './style.contact.css';
 
-const TRYBE_CERT_ONE = 'https://www.credential.net/7dd5fbdb-';
-const TRYBE_CERT_TWO = '488e-451c-b06c-6d2f0bdd0e39#gs.xw260o';
+const TRYBE_CERT_ONE = 'https://www.credential.net/0463eaa9-';
+const TRYBE_CERT_TWO = 'bfc0-453a-9e04-f5a0d50ec385#gs.42vlfz';
+
+const ALURA_CERT_ONE = '';
+const ALURA_CERT_TWO = '';
 
 export default function Contact(): JSX.Element {
   const navigate = useNavigate();
@@ -24,11 +27,11 @@ export default function Contact(): JSX.Element {
       <div className="items-contact">
         <div className="email">
           <span className="material-icons-outlined icon">email</span>
-          <span>adson@devago.com.br</span>
+          <span>adsongoliveira2022@outlook.com</span>
         </div>
         <div className="tel" >
           <span className="material-icons-outlined icon">phone</span>
-          <span>{'+55 (77) 98115-5625'}</span>
+          <span>{'+55 (77) 99143-1531'}</span>
         </div>
         <div className="address" >
           <span className="material-icons-outlined icon">home</span>
@@ -59,7 +62,17 @@ export default function Contact(): JSX.Element {
             rel="noreferrer"
             target="_blank"
           >
-            <span>Certificado de Desenvolvimento Front-End</span>
+            <span>Certificado de Desenvolvimento Fullstack</span>
+          </a>
+        </div>
+        <div className='trybe'>
+          <span className="material-icons-outlined icon">code</span>
+          <a
+            href={ALURA_CERT_ONE+ALURA_CERT_TWO}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <span>Certificado Alura LevelUp</span>
           </a>
         </div>
       </div>
