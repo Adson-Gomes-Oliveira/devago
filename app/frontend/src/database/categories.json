@@ -28,5 +28,15 @@
         "id": 6,
         "name": "MICROSSERVICES",
         "type": "label"
+    },
+    {
+        "id": 7,
+        "name": "GIT",
+        "type": "tech"
+    },
+    {
+        "id": 8,
+        "name": "REACT",
+        "type": "tech"
     }
 ]

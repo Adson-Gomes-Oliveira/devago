@@ -5,7 +5,7 @@
         "description": "Projeto que simula um ecommerce online com diversas funcionalidades, cadastro/login, carrinho de compras, email de confirmação, filtros, páginas de produtos e muito mais, desenvolvido com arquitetura de micro-serviçose seguindo conceitos do Twelve-Factor-App.\n\nNeste projeto diversas barreiras e desafios tiveram de ser superados, foi meu primeiro contato com mensageria e banco de dados Redis, construir o sistema necessário para confirmar uma compra de forma assíncrona e ao final enviar um email de confirmação para o usuário trouxe diversos aprendizados.\n\nFoi extremamente interessante criar um gateway para a comunicação do cliente com os microsserviços, além de implementar um sistema de autenticação e autorização confiável e seguro. Utilizar o TwelveFactorApp me ajudou a ter uma melhor organização dos serviços além de me trazer diversos conhecimentos sobre estrutura e arquitetura de software.",
         "linkToRepo": "https://github.com/Adson-Gomes-Oliveira/trooper-ecommerce",
         "linkToProd": "no_link",
-        "thumbnail": "https://i.ibb.co/jLKw3Mx/image.png",
+        "thumbnail": "https://i.ibb.co/xYssdt9/trooper-cover.png",
         "status": true,
         "categories": [
             {
@@ -35,6 +35,11 @@
             },
             {
                 "id": 7,
+                "name": "GIT",
+                "type": "tech"
+            },
+            {
+                "id": 8,
                 "name": "REACT",
                 "type": "tech"
             }
@@ -42,31 +47,26 @@
     },
     {
         "id": "2",
-        "title": "Trybe Futebol Clube",
-        "description": "Projeto que simula uma tabela de classificação para um campeonato de futebol",
-        "linkToRepo": "https://github.com/Adson-Gomes-Oliveira/trybe-futebol-clube",
+        "title": "Maratonei",
+        "description": "Aplicação para consulta de filmes e séries online, dentre as funcionalidades estão:\n\n- Pesquisa\n- Filtragem\n- Conteúdo de filmes e séries\n- Informações sobre a obra, como elenco, custo, faturamento e é possível encontrar as plataformas de streaming que possuem determinado título em seu catalogo.\n\nDurante o desenvolvimento dessa aplicação tive um grande aprendizado no frontend, como lidar com reloads, estado, filtrtagem de conteúdo e manipulação de estado. Projeto desenvolvido utilizando a API do IMDB.",
+        "linkToRepo": "https://github.com/Adson-Gomes-Oliveira/maratonei",
         "linkToProd": "no_link",
-        "thumbnail": "https://i.ibb.co/RNVwR45/image.png",
+        "thumbnail": "https://i.ibb.co/rymcTKH/maratonei-thumb.webp",
         "status": true,
         "categories": [
             {
                 "id": 2,
-                "name": "NODE.JS",
+                "name": "REACT",
                 "type": "tech"
             },
             {
                 "id": 3,
-                "name": "EXPRESS",
+                "name": "JAVASCRIPT",
                 "type": "tech"
             },
             {
                 "id": 4,
-                "name": "TYPESCRIPT",
-                "type": "tech"
-            },
-            {
-                "id": 7,
-                "name": "REACT",
+                "name": "GIT",
                 "type": "tech"
             }
         ]

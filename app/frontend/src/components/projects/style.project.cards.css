@@ -10,10 +10,10 @@
     @apply my-8 flex flex-col items-center;
   }
   .card-thumb {
-    @apply w-[100%] border-4 border-projectLightBlue;
+    @apply w-[95%] border-4 border-projectLightBlue;
   }
   .card-stacks {
-    @apply mt-4 flex items-center;
+    @apply mt-4 ml-4 flex items-center self-start;
   }
   .card-stacks .stacks {
     @apply w-4/5 ml-2 flex flex-wrap text-sm;
@@ -34,7 +34,20 @@
   .project-card {
     @apply lg:my-16 2xl:my-32 lg:items-start lg:w-[30%];
   }
+  .card-stacks {
+    @apply lg:ml-0;
+  }
   .card-stacks img {
     @apply lg:w-7;
   }
+  .card-thumb {
+    @apply lg:w-[100%];
+  }
 }
+
+/* Breakpoint: mobile devices */
+/* @layer base {
+  .card-stacks {
+    @apply mt-4 flex items-center;
+  }
+} */

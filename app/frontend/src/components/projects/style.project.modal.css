@@ -4,7 +4,7 @@
 
 @layer base {
   .project-modal {
-    @apply w-screen h-screen fixed top-0 left-0 bg-modalBackground;
+    @apply w-screen h-screen fixed top-0 left-0 bg-modalBackground overflow-scroll;
   }
 
   .modal-close-button {
@@ -16,11 +16,11 @@
   }
 
   .modal-stacks {
-    @apply my-4 flex;
+    @apply ml-1 my-4 flex;
   }
 
   .modal-stacks img {
-    @apply mx-1 w-[4%];
+    @apply mx-1 w-[6%];
   }
 
   .modal-body {
@@ -44,7 +44,7 @@
   }
 
   .modal-body-button button {
-    @apply mb-3 w-full h-12 text-gray-900 text-xl font-bebas bg-projectDarkenBlue;
+    @apply mb-24 w-full h-12 text-gray-900 text-xl font-bebas bg-projectDarkenBlue;
   }
 }
 

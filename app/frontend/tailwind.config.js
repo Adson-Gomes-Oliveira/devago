@@ -17,6 +17,12 @@ module.exports = {
         projectDarkenBlue: '#1486A8',
         projectLightBlue: '#32B7E3',
       },
+      screens: {
+        'mobile': '320px',
+        'tablet': '640px',
+        'desktop': '1366px',
+        'full': '1920px'
+      }
     },
   },
   plugins: [],
