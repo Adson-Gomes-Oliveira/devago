@@ -44,7 +44,6 @@ export default function Contact(): JSX.Element {
       </div>
       <div className="info-contact">
         <h2>Informações Adicionais</h2>
-        <span>{'Estudando Desenvolvimento Web na Trybe [Back-End]'}</span>
         <div className='efset'>
           <span className="material-icons-outlined icon">language</span>
           <a
