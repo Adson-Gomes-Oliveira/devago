@@ -31,7 +31,7 @@
         "description": "Projeto que simula um ecommerce online com diversas funcionalidades, cadastro/login, carrinho de compras, email de confirmação, filtros, páginas de produtos e muito mais, desenvolvido com arquitetura de micro-serviçose seguindo conceitos do Twelve-Factor-App.\n\nNeste projeto diversas barreiras e desafios tiveram de ser superados, foi meu primeiro contato com mensageria e banco de dados Redis, construir o sistema necessário para confirmar uma compra de forma assíncrona e ao final enviar um email de confirmação para o usuário trouxe diversos aprendizados.\n\nFoi extremamente interessante criar um gateway para a comunicação do cliente com os microsserviços, além de implementar um sistema de autenticação e autorização confiável e seguro. Utilizar o TwelveFactorApp me ajudou a ter uma melhor organização dos serviços além de me trazer diversos conhecimentos sobre estrutura e arquitetura de software.",
         "linkToRepo": "https://github.com/Adson-Gomes-Oliveira/trooper-ecommerce",
         "linkToProd": "no_link",
-        "thumbnail": "https://i.ibb.co/KXF5SJZ/trooper-cover.png",
+        "thumbnail": "https://i.ibb.co/SmSSTg5/trooper-cover-1.webp",
         "status": true,
         "categories": [
             {
@@ -82,7 +82,7 @@
         "description": "Plataforma para jogar RPG de mesa online, o TableRise foi desenvolvido pensando em jogadores que querem ter uma experiência incrível jogando RPG mesmo que a distância. Uma aplicação desenvolvida para uma rápida curva de aprendizado, sendo possível iniciar campanhas e já jogar com os amigos em poucos minutos, criar e gerenciar fichas, desenvolver histórias incríveis e contruir memórias, isso é TableRise.\n\nQuando idealizei esse projeto eu tinha dois objetivos em mente, contruir uma plataforma amigável para jogar RPG online e ter uma experiência real de um projeto profissional, ajudando Jr's a terem um case real no portfólio de um projeto que está sendo utilizado por usuários reais e desenvolvido com as melhores práticas de mercado.",
         "linkToRepo": "https://github.com/TableRise",
         "linkToProd": "no_link",
-        "thumbnail": "https://i.ibb.co/MRjKzhc/255737992-387aca69-151e-4c18-868e-b9f5e77e1f1d.webp",
+        "thumbnail": "https://i.ibb.co/8gYMKSN/tablerise-cover.webp",
         "status": true,
         "categories": [
             {
